@@ -1,0 +1,285 @@
+/* h1 {  
+    color:rgb(36, 38, 43);
+    background-color: rgb(23, 27, 41);
+    color: rgb(252, 5, 68);
+    color: rgb(247, 41, 157);
+    color: rgb(62, 61, 72);
+    color: rgb(219, 221, 221);
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(23, 27, 41);
+  font-family:'Ramabhadra', sans-serif;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+#objetivo, #fotos {
+  background-color: rgb(36, 38, 43);
+}
+
+#redes{
+  background-color: rgb(199, 0, 0);
+}
+
+.perfil {
+  border-radius: 80%;
+}
+
+.card {
+  background-color: rgb(62, 61, 72);
+  border-radius: 10%;
+}
+
+/* slide con movimiento */
+
+.imgaslide{
+  opacity: 0.4;
+  width: 100%;
+  height: 450px;
+}
+
+.text-start {
+  text-align: center!important;
+}
+
+.parraslide {
+  margin-top: 4.5%;;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top:32%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+
+.carousel-control-next, .carousel-control-prev, .carousel-indicators {
+  z-index: 0;
+}
+
+/*Estilo barra navegación*/
+#navbarNavAltMarkup {
+  background-color:rgba(0, 0, 0, 0.8);
+  position: relative;
+  width: 90%;
+  text-align: center;
+  z-index: 1;
+  margin-top: 2px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+  z-index: 1;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  opacity: 0.95;
+  z-index: 1;
+  width: 100%;
+  height: 80px;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 1;
+}
+
+
+.navbar-brand {
+  font-size: 35px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.link {
+  margin-top: 10px;
+  padding-right: 20px!important;
+  padding-left: 10px!important;
+  text-align: center;
+  font-size: 17px;
+}
+
+.botones {
+  margin-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.btn {
+  margin: 10px;
+  border-radius: 30px
+}
+
+.btn-check:focus+.btn, .btn:focus, .btn:active {
+  box-shadow: none!important;
+}
+
+.in {
+  background-color: rgb(255, 255, 255);
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(199, 0, 0);
+}
+
+.re {
+  background-color: rgb(199, 0, 0);
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: white
+}
+
+.redir {
+  text-decoration: none;
+  color: rgb(62, 61, 72);
+}
+
+.redir:hover {
+  color:rgb(255, 255, 255);
+}
+
+.img {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  #navbarNavAltMarkup {
+      background-color: transparent;
+  }
+}
+
+
+
+/*--------Estilos del footer--------*/
+.footer{
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.footer img{
+    width: 50px;
+  
+    margin-right: 10px;
+
+}
+
+/*formulario*/
+
+
+h2{
+    width: 50px;
+  
+    margin-right: 10px; 
+}
+
+.register {
+    margin-top: 50px;
+    background:rgb(23, 27, 41);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+  }
+  
+  .register__container {
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 350px;
+    min-height: 500px;
+    padding: 40px 50px;
+    color: white;
+  }
+  
+  .register__container_div {
+    margin-bottom: 50px;
+  }
+  
+  .register__container_div h2 {
+    font-size: 1.5rem;
+    margin-left: 50px;
+  }
+  
+  
+  .register__container--form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .register__container--form .input {
+    background-color: transparent;
+    border-left: 0px;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 2px solid white;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    height: 50px;
+    padding: 0 20px;
+    outline: none;
+    color:white;
+  }
+  
+  ::placeholder {
+    color: rgb(255, 255, 255);
+  }
+  
+  .button {
+
+    background-color:rgb(199, 0, 0);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 50px;
+    margin: 10px 0;
+    width: 250px;    
+  }
+  
+  .register__inicio {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  
+  .register__inicio_a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    padding-top: 25px;
+    margin-left: 25px;
+  }
+
+  
+/*icono*/
+.fa-facebook-square{
+color: rgb(24, 24, 207);
+
+}
+.fa-google{
+  color: white;
+
+}

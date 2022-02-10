@@ -1,0 +1,432 @@
+/*h1 {  
+    color:rgb(36, 38, 43);
+    background-color: rgb(23, 27, 41);
+    color: rgb(252, 5, 68);
+    color: rgb(247, 41, 157);
+    color: rgb(62, 61, 72);
+    color: rgb(219, 221, 221);
+} */
+
+/*Importaciones*/
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+
+/* body */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(23, 27, 41);
+    font-family: 'Open Sans' sans-serif;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+#objetivo, #fotos {
+    background-color: rgb(36, 38, 43);
+}
+
+#redes{
+    background-color: rgb(236, 29, 66);
+}
+
+
+/* fotos redondas */
+.perfil {
+    border-radius: 60%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card {
+    background-color: rgb(62, 61, 72);
+    border-radius: 10%;
+}
+
+/* slide con movimiento */
+.carousel-tittle{
+    word-spacing: 5px;
+    letter-spacing: 20px;
+}
+.imgaslide{
+    opacity: 0.4;
+    width: 100%;
+    height: 450px;
+}
+
+.text-start {
+    text-align: center!important;
+}
+
+.parraslide {
+    margin-top: 4.5%;;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top:32%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
+
+.carousel-control-next, .carousel-control-prev, .carousel-indicators {
+    z-index: 0;
+}
+
+/*Estilo barra navegación*/
+#navbarNavAltMarkup {
+    background-color:rgba(0, 0, 0, 0.8);
+    position: relative;
+    width: 90%;
+    text-align: center;
+    z-index: 2;
+    margin-top: 2px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+    z-index: 2;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 80px;
+}
+
+.navbar {
+	position: fixed;
+    z-index: 1;
+}
+
+
+.navbar-brand {
+    font-size: 35px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.link {
+    margin-top: 10px;
+    padding-right: 20px!important;
+    padding-left: 10px!important;
+    text-align: center;
+    font-size: 17px;
+}
+
+.botones {
+    margin-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.btn {
+    margin: 10px;
+    border-radius: 30px
+}
+
+.btn-check:focus+.btn, .btn:focus, .btn:active {
+    box-shadow: none!important;
+}
+
+.in {
+    background-color: rgb(255, 255, 255);
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(236, 29, 66);
+}
+
+.re {
+    background-color: rgb(236, 29, 66);
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white
+}
+
+.redir {
+    text-decoration: none;
+    color: rgb(62, 61, 72);
+}
+
+.redir:hover {
+    color:rgb(255, 255, 255);
+}
+
+.img {
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    #navbarNavAltMarkup {
+        background-color: transparent;
+    }
+}
+
+/*Estilo nuestros productos*/
+
+.textoobj {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    padding-right: 20px;
+}
+
+.text {
+    text-align: justify;
+    font-size: 20px;
+}
+
+.fotos {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+/*
+.fotito {
+    padding: 7px;
+}*/
+
+@media screen and (max-width: 450px) and (min-width: 300px) {
+    .fotos {
+        display: none;
+    }
+    h2 {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .textoobj {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .text {
+        font-size: 15px;
+    }
+    .imgaslide {
+        height: 350px!important;
+    }
+}
+
+@media screen and (max-width: 992px) and (min-width: 451px) {
+
+    h2 {
+        font-size: 40px;
+    }
+    .dosfotos {
+        display: none;
+    }
+    .textoobj {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .text {
+        font-size: 20px;
+    }
+    .fotito {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .imgaslide {
+        height: 400px!important;
+    }
+
+} 
+
+/* Nuestros servicios */
+.div-serv{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.p-serv{
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    font-weight: lighter;
+}
+
+/*Estilos de la galeria*/
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 150px;
+    padding: 20px;
+    padding-bottom: 60px;
+    grid-gap: 10px;
+}
+
+.gallery__item {
+    position: relative;
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__item:nth-child(1) {
+    grid-column-start: span 3;
+}
+
+.gallery__item:nth-child(3) {
+    grid-column-start: span ;
+}
+
+.gallery__item:nth-child(6) {
+    grid-row-start: span 2;
+    grid-column-start: span 2;
+}
+
+.gallery__item:nth-child(8) {
+    grid-column-start: span 2;
+}
+
+@media (min-width:450px) {
+    .gallery-container {
+        grid-template-columns: repeat(4,1fr);
+        width: 85%;
+        margin: auto;
+    }
+    .gallery__item:nth-child(1){
+        grid-column-start: span 3;
+        grid-row-start: span 2;
+    }
+    .gallery__item:nth-child(6){
+        grid-row-start: span 3;
+    }
+    .gallery__item:nth-child(7){
+        grid-column-start: span 2;
+    }
+    .gallery__item:nth-child(8){
+        grid-column-start: span 1;
+    }
+}
+
+@media (min-width:1024px) {
+    .gallery-container {
+        grid-template-columns: repeat(5,1fr);
+        width: 85%;
+        margin: auto;
+    }
+    .gallery__item:nth-child(2){
+        grid-column-start: span 2;
+    }
+    .gallery__item:nth-child(3){
+        grid-column-start: span 2;
+    }
+    .gallery__item:nth-child(5){
+        grid-column-start: span 2;
+    }
+    .gallery__item:nth-child(7){
+        grid-column-start: span 3;
+    }
+    .gallery__item:nth-child(8){
+        grid-column-start: span 2;
+    }
+}
+
+/* nuestras variedades*/
+.variedad{
+    padding: 0 0 50px 0;
+}
+
+.perfil{
+    width:50%;
+    height:65%;
+}
+
+/*---------- Estilos del  Mapa----------*/
+.mapa {
+    margin: 70px 30px 200px 30px;
+    padding: 15px ;
+    background:  rgb(23, 27, 41);
+    text-align: center;
+}
+.mapa h3{
+    font-size: 25px;
+}
+.mapa p{
+    text-align: center;
+	
+}
+
+/*--------Estilos del footer--------*/
+
+/* estructura */
+.footer{
+    background:rgb(236, 29, 66);
+    color: #fff;
+    padding: 50px 50px 0 50px;
+    margin-top: 100px;
+    width: 100%;
+    margin-right: auto;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.col-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* iconos */
+.icons{
+    font-size: 25px;
+    margin-right: 20px;
+
+}
+
+.pizza{
+    color:white;
+    font-size: 40px;
+}
+
+/* textos */
+.barras{
+    display: inline-table;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.text-footer{
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.copy{
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}

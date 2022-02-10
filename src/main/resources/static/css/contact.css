@@ -1,0 +1,84 @@
+/* CONTACT */
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+
+/* body */
+.contact-wrapper {
+    background-color: rgb(62, 61, 72);
+    border-radius: 30px;
+    margin: 120px;
+}
+
+.contact-wrapper >*{
+    padding: 1em;
+    font-size: 16px;
+}
+
+
+/* CONTACT FORM */
+
+.contact-form form button,
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: .7em;
+    color: white;
+    font-size: 15px;
+    height: fit-content;
+}
+
+.contact-form form button {
+    background: rgb(236, 29, 66);
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus {
+    background: rgb(236, 29, 66);
+    color: white;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+
+/* CONTACT INFO */
+.contact-info{
+    font-family: 'Open Sans' sans-serif;
+    letter-spacing: 1px;
+}
+
+.contact-info h4,
+.contact-info ul,
+.contact-info p {
+    text-align: right;
+    margin: 0 0 1rem 0;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* LARGE SIZE */
+@media(min-width: 700px) {
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-wrapper > * {
+        padding: 2em;
+    }
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p {
+        text-align: left;
+    }
+}

@@ -1,0 +1,135 @@
+/*Shop*/
+
+.titulo{
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 30px 0;
+    
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    margin: auto;
+}
+
+.tabla {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 15px;
+    width: 620px;
+    text-align: center;
+}
+
+.contenedor1 {
+    background-color: rgb(236,29,66);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 50px 50px 50px;
+    align-items: center;
+    margin-top: 100px!important;
+    width: 800px;
+    border-radius: 25px;
+    margin-right: 40px;
+    
+}
+
+.contenedor-testcontenedor-test{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contenedor2{
+    background-color: rgb(236,29,66);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+    align-items: center;
+    margin-top: 100px!important;
+    width: 400px;
+    border-radius: 25px;
+}
+
+.tabla-separador{
+    margin-right: 30px;
+}
+
+.table-borderless{
+    margin: 20px;
+}
+
+.table-border{
+    border: 1px solid white;
+    border-radius: 15px;
+    background: rgb(42, 50, 77);
+}
+
+.botonesPagar{ 
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton{
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    align-self: center;
+    align-content: center;
+
+    font-family: sans-serif;
+    font-weight: 600;
+
+    text-decoration: none!important;
+    background-color: white;
+    color: rgb(23, 27, 41);
+    border-radius: 30px;
+    border: 1px solid  white;
+}
+
+.boton:hover{
+    background: rgba(255, 255, 255, 0.849);
+}
+
+input {
+    background: none;
+    border: none;
+}
+
+.cant-boton{
+    padding: auto;
+    align-self: center;
+    align-content: center;
+
+    font-family: sans-serif;
+    font-weight: 400;
+
+    text-decoration: none!important;
+    background-color: rgb(42, 50, 77);
+    color: white;
+    border-radius: 100px;
+    border: 1px solid  white;
+}
+
+/*INCREMENT DECREMENT FUNTION*/
+
+  /*
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+  
+.inp-center{
+    text-align: center;
+}*/

@@ -1,0 +1,46 @@
+.card{
+    background-color: rgb(62, 61, 72);
+    border-radius: 55px;
+    padding: 30px;
+    font-weight: lighter;
+    font-family: 'Open Sans' sans-serif;
+}
+
+.btn-log{
+    width: auto;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    background-color: rgb(236, 29, 66);
+    color: white;
+    align-content: center;
+    border: rgb(236, 29, 66);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.btn-log:hover{
+    width: auto;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    background-color: rgb(236, 29, 66);
+    align-content: center;
+    border: rgb(236, 29, 66);
+    font-weight: 400;
+    font-size: 18px;
+    color: rgb(23, 27, 41);
+}
+
+.small{
+    font-size: 17px;
+    color: white!important;
+}
+
+.small:hover{
+    color: rgb(223, 203, 203)!important;
+}
+
+.card-title{
+    letter-spacing: 3px;
+}
