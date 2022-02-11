@@ -73,7 +73,7 @@ public class ClientService implements UserDetailsService {
 	public Client editClient(String idClient, MultipartFile file, String name, String lastname, Long document,
 			String phoneNumber, String address, String email, String password1, String password2) throws ErrorService {
 
-		checkDataEdit(email, password1, password2, document, phoneNumber);
+		checkDataEdit(email,idClient, password1, password2, document, phoneNumber);
 
 		Optional<Client> check = clientRepository.findById(idClient);
 
@@ -164,7 +164,7 @@ public class ClientService implements UserDetailsService {
 		return clientRepository.findDni(document);
 	}
 
-	public void checkDataEdit(String email, String password1, String password2, Long document, String phoneNumber)
+	public void checkDataEdit(String email,String id, String password1, String password2, Long document, String phoneNumber)
 			throws ErrorService {
 
 		if (clientRepository.findDni(document) != null) {
@@ -178,7 +178,7 @@ public class ClientService implements UserDetailsService {
 		if (clientRepository.findPhoneNumber(phoneNumber) != null) {
 			throw new ErrorService("El Telefono que ingreso ya esta en uso, ingrese uno nuevo");
 		}
-		if (clientRepository.findEmail(email) != null) {
+		if (clientRepository.findEmailAndID(email, id) != null) {
 			throw new ErrorService("El email que ingreso ya esta en uso, ingrese uno nuevo");
 		}
 		if (password1.isEmpty() || password1 == null || password1.length() <= 7) {
@@ -188,8 +188,8 @@ public class ClientService implements UserDetailsService {
 			throw new ErrorService("La contraseña no puede esta vacia y  contener menos de 8 caracteres numericos");
 		}
 
-		if (password1 != password2) {
-			throw new ErrorService("La contraseñas deben ser iguales");
+		if (!password1.equals(password2)) {
+			throw new ErrorService("Las contraseñas deben ser iguales");
 		}
 
 	}
