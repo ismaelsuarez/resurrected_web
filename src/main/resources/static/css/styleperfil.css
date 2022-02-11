@@ -1,0 +1,140 @@
+
+*{
+	font-family: Trebuchet MS;
+}
+.i{
+    text-align: -webkit-center;
+}
+.bodyy{
+	margin:auto;
+        justify-content: center;
+	width: 400px;
+	height: 300px;
+	background-color: #f8be66;
+}
+.headder{
+	text-align: center;
+	height: 300px;
+	padding: 12px;
+        margin-bottom: -100px;
+
+}
+.img3{
+	width: auto;
+	height: 50px;
+	margin-left: 1000px;
+}
+.avatar{
+	width: 200px;
+	height: 200px;
+	border-radius:50%;
+}
+.user-name{
+	font-size: 18px;
+	margin-top: 14px;
+}
+.img2{
+	
+	margin-top: 25px;
+       
+}
+
+h2{
+	text-align: center;
+	margin-bottom: 20px;
+	color:rgba(0,0,0,0.5);
+}
+.container{
+	min-width: 992px;
+}
+.header{
+	width: 100%;
+	height: 200px;
+	background-color:rgba(213,146,0,0.2);
+}
+.nombre{
+    border:1px solid;
+	width: 300px;
+	height: 30px;
+	border: 1px solid rgba(0,0,0,0);
+	border-radius: 20px;
+	margin:auto;
+}	
+.edad{
+    border:1px solid;
+	width: 300px;
+	height: 30px;
+	border: 1px solid rgba(0,0,0,0);
+	border-radius: 20px;
+	margin:auto;
+}	
+.sexo{
+    border:1px solid;
+	width: 300px;
+	height: 30px;
+	border: 1px solid rgba(0,0,0,0);
+	border-radius: 20px;
+	margin:auto;
+}	
+.tamaño{
+    border:1px solid;
+	width: 300px;
+	height: 30px;
+	border: 1px solid rgba(0,0,0,0);
+	border-radius: 20px;
+	margin:auto;
+}	
+.raza{
+    border:1px solid;
+	width: 300px;
+	height: 30px;
+	border: 1px solid rgba(0,0,0,0);
+	border-radius: 20px;
+	margin:auto;
+}
+.color{
+    border:1px solid;
+	width: 300px;
+	height: 30px;
+	border: 1px solid rgba(0,0,0,0);
+	border-radius: 20px;
+	margin:auto;
+}		
+.zona{
+    border:1px solid;
+	width: 300px;
+	height: 30px;
+	border: 1px solid rgba(0,0,0,0);
+	border-radius: 20px;
+	margin:auto;
+}	
+
+.tipo1{
+	margin-top: 2px;
+	margin-left: 10px;
+}
+.tipo2{
+	margin-top: 2px;
+	margin-left: 10px;
+}
+.tipo3{
+	margin-top: 2px;
+	margin-left: 10px;
+}
+.tipo4{
+	margin-top: 2px;
+	margin-left: 10px;
+}
+.tipo5{
+	margin-top: 2px;
+	margin-left: 10px;
+}
+.tipo6{
+	margin-top: 2px;
+	margin-left: 10px;
+}
+.tipo7{
+	margin-top: 2px;
+	margin-left: 10px;
+}
+	

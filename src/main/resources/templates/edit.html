@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/351d56060d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>PizzApp</title>
+</head>
+
+<body class="text-light">
+
+     <!-- OBJETIVOS -->
+    <section id="objetivo">
+        <div th:defragment="createclient">
+		<div id="layoutAuthentication_content">
+			<main>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-7">
+							<div class="card shadow-lg border-0 rounded-lg mt-5">
+								<div class="card-header">
+									<h3 class="text-center card-title">¡Crea tu usuario y realizá tu compra!</h3>
+								</div>
+								<div class="card-body">
+									<form th:action="@{'/edit/' + ${id}}" method="POST" th:ob enctype="multipart/form-data">
+										<p th:if="${error !=null}" th:text="${error}" style="color: red"></p>
+										<div class="row mb-3">
+											<div class="col-md-6">
+												<div class="form-floating mb-3 mb-md-0">
+													<input required="true" class="form-control" name="name"
+														id="inputFirstName" type="text" placeholder="Ingrese su nombre"
+														th:value="${name}" /> <label style="color: gray"
+														for="inputFirstName">Nombre</label>
+												</div>
+											</div>
+											<div class="col-md-6 mb-3">
+												<div class="form-floating">
+													<input required="true" class="form-control" name="lastname"
+														id="inputLastName" type="text"
+														placeholder="Enter your last name" th:value="${lastname}" />
+													<label style="color: gray" for="inputLastName">Apellido</label>
+												</div>
+											</div>
+											<div class="col-md-6 mb-3">
+												<div class="form-floating">
+													<input required="true" class="form-control" name="document"
+														id="inputLastName" type="number" placeholder="Documento"
+														th:value="${document}" /> <label style="color: gray"
+														for="inputLastName">Documento</label>
+												</div>
+											</div>
+											<div class="col-md-6 mb-3">
+												<div class="form-floating">
+													<input required="true" class="form-control" name="phoneNumber"
+														id="inputphoneNumber" type="text" placeholder="Telefono"
+														th:value="${phoneNumber}" /> <label style="color: gray"
+														for="inputLastName">Telefono</label>
+												</div>
+											</div>
+											<div class="form-floating mb-3">
+												<div class="form-floating">
+													<input required="true" class="form-control" name="adress"
+														id="inputaddress" type="text" placeholder="Enter your last name"
+														th:value="${adress}" />
+													<label style="color: gray" for="inputLastName">Direccion</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-floating mb-3">
+											<input required="true" class="form-control" name="email" id="inputEmail"
+												type="email" placeholder="name@example.com" th:value="${email}" />
+											<label style="color: gray" for="inputEmail">Correo electronico</label>
+										</div>
+
+										<div class="row mb-3">
+											<div class="col-md-6">
+												<div class="form-floating mb-3 mb-md-0">
+													<input required="true" class="form-control" name="password1"
+														id="inputPassword" type="password"
+														placeholder="Create a password" th:value="${password1}" />
+													<label style="color: gray" for="inputPassword">Clave</label>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-floating mb-3 mb-md-0">
+													<input required="true" class="form-control" name="password2"
+														id="inputPasswordConfirm" type="password"
+														placeholder="Confirmar password" th:value="${password2}" />
+													<label style="color: gray" for="inputPasswordConfirm">Repetir
+														Clave</label>
+												</div>
+											</div>
+										</div>
+
+										<div>
+											<div>
+												<label>Cargar foto de perfil</label>
+											</div>
+										</div>
+										<div class="form-floating mb-3">
+											<input style="color: gray" class="form-control" name="file" id="inputEmail"
+												type="file" /> <label>Cargar foto de
+												perfil</label>
+										</div>
+
+										<div class=" text-center mt-4 mb-0">
+											<button class="btn btn-primary btn-xl btn-log" type="submit">Crear
+												usuario</button>
+											<button class="btn btn-primary btn-xl btn-log" type="reset">Limpiar
+												datos</button>
+											<a class="btn btn-primary btn-xl btn-log" href="/">Volver al inicio</a>
+										</div>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+    </section>
+ 
+</body>
+
+</html>

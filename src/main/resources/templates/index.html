@@ -1,2 +1,156 @@
 <!DOCTYPE html>
-<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>De Pelos - Index</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- NUESTROS ESTILOS -->
+        <link href="/css/full-slider.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <style>
+            body {
+                background-image: url("/img/fondo2-02.png");
+                background-repeat: repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-size: 100% auto;
+            }
+        </style>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark ">
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="brand_logo_container">
+                                <img src="/img/logologin.png" class="brand_logo" alt="Logo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+                </div>
+                <div class="row justify-content-rigth align-items-rigth ">
+                    <div class="col-md-4">
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="registrate" >Registro</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login">LogIn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-1"></div>
+            </nav>
+        </header>
+        <!-- Slider de elementos ==== -->
+        <section >
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    
+                    <div class="col-md-7 col-md-3">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <!-- Slide One - Set the background image for this slide in the line below -->
+                                <div class="carousel-item active" style="background-image: url('/img/mascota3.jpeg')">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>El amor va mas alla de las especies</h3>
+                                        <p>Es parte de nuestra familia y por eso se merece lo mejor</p>
+                                    </div>
+                                </div>
+                                <!-- Slide Two - Set the background image for this slide in the line below -->
+                                <div class="carousel-item" style="background-image: url('/img/mascota1.jpeg')">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>No hay nada como el hogar</h3>
+                                        <p>Para que cada mascota encuentre su camino a casa</p>
+                                    </div>
+                                </div>
+                                <!-- Slide Three - Set the background image for this slide in the line below -->
+                                <div class="carousel-item" style="background-image: url('/img/mascota2.jpeg')">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>Ayuda a los demas</h3>
+                                        <p>¡que ninguna familia se rompa!</p>
+                                    </div>
+                                </div>
+                            </div> 
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div> 
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                   
+                        <div class="col-md-5 col-sm-3 ">
+                            <a  href="registro" class="portfolio-box">
+                                <img src="/img/botonregistro-01.jpeg" class="img-responsive-index" alt="">
+                                <div class="portfolio-box-caption">
+                                    <div class="portfolio-box-caption-content">
+                                        <div class="project-category text-faded">
+                                            Registrate
+                                        </div>
+                                        <div class="project-name">
+                                            Crea una nueva cuenta para ingresar
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <div class="col-md-2 col-sm-3"></div>
+                        <div class="col-md-5 col-sm-3">
+                            <a  href="login" class="portfolio-box">
+                                <img src="/img/botonlogin-01.jpeg" class="img-responsive-index" alt="">
+                                <div class="portfolio-box-caption">
+                                    <div class="portfolio-box-caption-content">
+                                        <div class="project-category text-faded">
+                                            LogIn
+                                        </div>
+                                        <div class="project-name">
+                                            Accede con tu cuenta
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="/vendor/jquery/jquery.min.js"></script>
+        <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    </body>
+
+</html>

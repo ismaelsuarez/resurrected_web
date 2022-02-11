@@ -250,7 +250,7 @@ public class ClientService implements UserDetailsService {
 				permits.add(p1);
 			}
 
-			if (client.getRol().toString().equals("REGISTER")) {
+			if (client.getRol().toString().equals("CLIENT")) {
 				GrantedAuthority p1 = new SimpleGrantedAuthority("ROLE_USER_" + Rol.CLIENT.toString());
 				permits.add(p1);
 			}
