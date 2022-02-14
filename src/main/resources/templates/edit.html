@@ -22,93 +22,6 @@
 <title>PizzApp</title>
 </head>
 
-<body class="text-light">
-
-	<!--Barra de navegacion-->
-	<nav class="navbar navbar-expand-lg navbar-dark">
-		<div class="container">
-			<a class="navbar-brand" href="#">PizzApp</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav mx-auto seccion">
-					<a class="nav-link link" href="index.html">Inicio</a> <a
-						class="nav-link link" href="product.html">Productos</a> <a
-						class="nav-link link" href="contact.html">Contacto</a> <a
-						class="nav-link link" href="shop.html">Mis Compras</a>
-				</div>
-				<div class="col-auto text-center botones">
-					<a href="login.html" class="redir"><button type="button"
-							class="btn btn-lg in">Ingresar</button></a> <a href="registrate.html"
-						class="redir">
-						<button type="button" class="btn btn-lg re">Registrate</button>
-					</a>
-				</div>
-			</div>
-	</nav>
-
-	<!--- carousel -->
-	<header>
-		<div id="carouselExampleCaptions" class="carousel slide"
-			data-bs-ride="carousel">
-			<div class="carousel-indicators">
-				<button type="button" data-bs-target="#carouselExampleCaptions"
-					data-bs-slide-to="0" class="active" aria-current="true"
-					aria-label="Slide 1"></button>
-				<button type="button" data-bs-target="#carouselExampleCaptions"
-					data-bs-slide-to="1" aria-label="Slide 2"></button>
-				<button type="button" data-bs-target="#carouselExampleCaptions"
-					data-bs-slide-to="2" aria-label="Slide 3"></button>
-			</div>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="assets/index/slide1.png "
-						class=" imgaslide d-block w-100" alt="...">
-					<div class="carousel-caption  d-md-block">
-						<h5 class=" text-start  fs-1 fw-bold carousel-tittle">•LAS
-							PIZZAS MÁS EXQUISITAS•</h5>
-						<p class=" text-start fs-4 parraslide">Tenemos variedades para
-							todos los gustos</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="assets/index/slide2.png" class="imgaslide d-block w-100"
-						alt="...">
-					<div class="carousel-caption  d-md-block">
-						<h5 class=" text-start fs-1 fw-bold carousel-tittle">•MATERIA
-							PRIMA DE PRIMERA CALIDAD•</h5>
-						<p class=" text-start fs-4 parraslide">Verduras orgánicas</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="assets/index/slide3.png" class=" imgaslide d-block w-100"
-						alt="...">
-					<div class="carousel-caption  d-md-block">
-						<h5 class="text-start fs-1 fw-bold carousel-tittle">•VARIEDADES
-							APTAS PARA TODOS•</h5>
-						<p class="text-start fs-4 parraslide ">Pizzas sin TACC,
-							veganas y clásicas</p>
-					</div>
-				</div>
-			</div>
-			<button class="carousel-control-prev" type="button"
-				data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button"
-				data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
-	</header>
-
-	<!--form-->
 
 	<div th:defragment="createclient">
 		<div id="layoutAuthentication_content">
@@ -118,7 +31,7 @@
 						<div class="col-lg-7">
 							<div class="card shadow-lg border-0 rounded-lg mt-5">
 								<div class="card-header">
-									<h3 class="text-center card-title">¡Crea tu usuario y
+									<h3 class="text-center card-title">¡Edita tu usuario y
 										realizá tu compra!</h3>
 								</div>
 								<div class="card-body">
@@ -208,7 +121,7 @@
 										</div>
 
 										<div class=" text-center mt-4 mb-0">
-											<button class="btn btn-primary btn-xl btn-log" type="submit">Crear
+											<button class="btn btn-primary btn-xl btn-log" type="submit">Editar
 												usuario</button>
 											<button class="btn btn-primary btn-xl btn-log" type="reset">Limpiar
 												datos</button>
@@ -229,33 +142,7 @@
 
 	<!--- footer -->
 
-	<footer class=" footer">
-
-		<div class="row">
-			<div class="col-4">
-				<h1 class="text-footer">2021|PizzApp</h1>
-			</div>
-
-			<div class="col-4">
-				<p class="barras">-</p>
-				<i class="fas fa-pizza-slice pizza"></i>
-				<p class="barras">-</p>
-			</div>
-
-			<div class="col-4">
-				<i class="fab fa-facebook-f icons"></i> <i
-					class="fab fa-twitter icons"></i> <i class="fab fa-whatsapp icons"></i>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col copy">
-				<p>&copy; Todos los derechos reservados a PizzApp | 2021</p>
-
-			</div>
-		</div>
-	</footer>
-
+	
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"

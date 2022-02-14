@@ -1,4 +1,4 @@
 package com.resurrected.enums;
 
-public enum Status {Disponible,Pendiente,Agotado,Proximamente
+public enum Status {available,earring,exhausted,early,publish
 }
