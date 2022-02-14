@@ -16,6 +16,9 @@ public interface ClientRepository extends JpaRepository<Client, String> {
 
 	@Query("SELECT a FROM Client a WHERE a.email= :email")
 	public Client findEmail(@Param("email") String email);
+	
+	@Query("SELECT a FROM Client a WHERE a.email= :email AND a.id != :id")
+	public Client findEmailAndID(@Param("email") String email, @Param("id") String id);
 
 	@Query("SELECT a FROM Client a WHERE a.active=true")
 	public List<Client> findTrue();
