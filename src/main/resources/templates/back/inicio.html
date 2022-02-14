@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div th:replace="back/backFragments :: head_basic"></div>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div th:replace="back/backFragments :: nav_basic"></div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mt-3">
+
+        <!-- SECTION PRODUCTOS -->
+        <section>
+            <h3>PRODUCTOS</h3>
+
+            <!-- ALTA -->
+            <hr>
+            <h5>ALTA</h5> 
+            <form>
+                <div class="mb-3">
+                    <label for="nombreProducto" class="form-label">Nombre Producto</label>
+                    <input type="text" class="form-control" id="nombreProducto" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="statusProducto" class="form-label">Seleccionar Status</label>
+                    <select id="statusProducto" class="form-select">
+                        <option>Disponible</option>
+                        <option>Pendiente</option>
+                        <option>Agotado</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcionProducto" class="form-label">Descripcion Producto</label>
+                    <textarea class="form-control" id="descripcionProducto" rows="3" name="description"></textarea>
+                </div>
+                <label for="nada" class="form-label">COMPLETAR ATRIBUTOS Y ETC.</label>
+                <button type="submit" class="btn btn-success">Crear Producto</button>
+            </form>
+
+            <!-- MODIFICACION -->
+            <hr>
+            <h5>MODIFICACION</h5> 
+            <form>
+                <div class="mb-3">
+                    <label for="Select" class="form-label">Seleccionar Producto a Modificar</label>
+                    <select id="Select" class="form-select">
+                        <option>Producto 1</option>
+                        <option>Producto 2</option>
+                        <option>Producto 3</option>
+                        <option>Producto 4</option>
+                        <option>Producto 5</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="nombreProducto" class="form-label">Nombre Producto</label>
+                    <input type="text" class="form-control" id="nombreProducto" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="statusProducto" class="form-label">Seleccionar Status</label>
+                    <select id="statusProducto" class="form-select">
+                        <option>Disponible</option>
+                        <option>Pendiente</option>
+                        <option>Agotado</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcionProducto" class="form-label">Descripcion Producto</label>
+                    <textarea class="form-control" id="descripcionProducto" rows="3" name="description"></textarea>
+                </div>
+                <label for="nada" class="form-label">COMPLETAR ATRIBUTOS Y ETC.</label>
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+
+            <!-- BAJA -->
+            <hr>
+            <h5>BAJA</h5> 
+            <form>
+                <div class="mb-3">
+                    <label for="Select" class="form-label">Seleccionar Producto a Eliminar</label>
+                    <select id="Select" class="form-select">
+                        <option>Producto 1</option>
+                        <option>Producto 2</option>
+                        <option>Producto 3</option>
+                        <option>Producto 4</option>
+                        <option>Producto 5</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- LINKS SCRIPTS BOOTSTRAP -->
+    <div th:replace="back/backFragments :: scripts_bootstrap"></div>
+
+</body>
+
+</html>
