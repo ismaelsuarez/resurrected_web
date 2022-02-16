@@ -35,6 +35,14 @@ public class ClientController {
 	public String registrate() {
 		return "registrate.html";
 	}
+	@GetMapping("/index")
+	public String index() {
+		return "indexEmi.html";
+	}
+	@GetMapping("/producto")
+	public String producto() {
+		return "product.html";
+	}
 
 	@GetMapping("/login")
 	public String login() {
