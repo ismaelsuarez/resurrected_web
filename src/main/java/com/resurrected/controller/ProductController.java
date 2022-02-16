@@ -35,64 +35,8 @@ public class ProductController {
 	}
 	
 	
-	// @PreAuthorize("hasAnyRole('ROLE_USER_ADMIN')")
-	@PostMapping("/producto")
-	public String regisProduct(ModelMap model,@RequestParam MultipartFile file,@RequestParam String name,@RequestParam Status status, @RequestParam String size,@RequestParam String category,
-			@RequestParam String description,@RequestParam RawMaterials rawMaterials, @RequestParam Double cost,@RequestParam Double price,
-			@RequestParam Integer stock, @RequestParam Double iva) {
-
-		try {
-			
-			productService.createProduct(file, name, status, size, category, description, rawMaterials, cost, price, stock, iva);
-			
-			
-		} catch (ErrorService ex) {
-			model.put("error", ex.getMessage());
-			model.put("name", name);
-			model.put("status", status);
-			model.put("size", size);
-			model.put("category", category);
-			model.put("rawMaterials", rawMaterials);
-			model.put("cost", cost);
-			model.put("price", price);
-			model.put("stock", stock);
-			model.put("iva", iva);
-			model.put("file", file);
-			
-			return "redirect:/back/inicio";
-		}
-		
-		return "redirect:/back/inicio";
-	}
 	
-	// @PreAuthorize("hasAnyRole('ROLE_USER_ADMIN')")
-	@PostMapping("/edit_producto")
-	public String editProduct(ModelMap model,@RequestParam String id,@RequestParam MultipartFile file,@RequestParam String name,@RequestParam Status status, @RequestParam String size,@RequestParam String category,
-			@RequestParam String description,@RequestParam RawMaterials rawMaterials, @RequestParam Double cost,@RequestParam Double price,
-			@RequestParam Integer stock, @RequestParam Double iva) {
-
-		try {
-			
-			productService.editProduct(id, file, name, status, size, description, rawMaterials, cost, price, stock, iva);
-			
-			
-		} catch (ErrorService ex) {
-			model.put("error", ex.getMessage());
-			model.put("name", name);
-			model.put("status", status);
-			model.put("size", size);
-			model.put("category", category);
-			model.put("rawMaterials", rawMaterials);
-			model.put("cost", cost);
-			model.put("price", price);
-			model.put("stock", stock);
-			model.put("iva", iva);
-			model.put("file", file);
-			
-			return "redirect:/back/inicio";
-		}
-		
-		return "redirect:/back/inicio";
-	}
+	
+	
 
 }
