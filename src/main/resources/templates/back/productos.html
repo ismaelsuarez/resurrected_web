@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div th:replace="back/backFragments :: head_basic"></div>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div th:replace="back/backFragments :: nav_basic"></div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mt-3">
+
+        <h3>PRODUCTOS <span th:if="${status != null}" th:text="${status}"></span> </h3>
+        <hr>
+
+        <!-- TODO: aplicar thymeleaf, aplicar filtros -->
+        <!-- SECTION PRODUCTOS CARDS -->
+        <h4>CARDS</h4>
+        <section class="column mb-3">
+            <h5>Filtros</h5>
+            <a href="/back/productos"><button type="button" class="btn btn-secondary">Todos</button></a>
+            <a href="/back/productos?status=Pendientes"><button type="button" class="btn btn-primary">Pendientes</button></a>
+            <a href="/back/productos?status=Publicados"><button type="button" class="btn btn-success">Publicados</button></a>
+            <a href="/back/productos?status=Deshabilitados"><button type="button" class="btn btn-danger">Deshabilitados</button></a>
+        </section>
+        <section class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="https://dummyimage.com/600x400/544f4f/ffffff.png"
+                        alt="descripcion imagen producto">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 1</h5>
+                        <p class="card-text">Descripcion Producto 1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col colCard">
+                <div class="card cardCategoria">
+                    <img class="card-img-top" src="https://dummyimage.com/600x400/544f4f/ffffff.png"
+                        alt="descripcion imagen producto">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 2</h5>
+                        <p class="card-text">Descripcion Producto 2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col colCard">
+                <div class="card cardCategoria">
+                    <img class="card-img-top" src="https://dummyimage.com/600x400/544f4f/ffffff.png"
+                        alt="descripcion imagen producto">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 3</h5>
+                        <p class="card-text">Descripcion Producto 3</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col colCard">
+                <div class="card cardCategoria">
+                    <img class="card-img-top" src="https://dummyimage.com/600x400/544f4f/ffffff.png"
+                        alt="descripcion imagen producto">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 4</h5>
+                        <p class="card-text">Descripcion Producto 4</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LINKS SCRIPTS BOOTSTRAP -->
+    <div th:replace="back/backFragments :: scripts_bootstrap"></div>
+
+</body>
+
+</html>
