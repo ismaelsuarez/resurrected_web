@@ -2,7 +2,7 @@
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<div th:replace="back/backFragments :: head_basic"></div>
+	<div th:replace="back/backFragments :: head_basic"></div>
 </head>
 
 <body>
@@ -22,103 +22,82 @@
 			<!-- ALTA -->
 			<hr>
 			<h5>ALTA</h5>
-			<form action="/producto" method="POST" th:ob
-											enctype="multipart/form-data">
-											<p th:if="${error !=null}" th:text="${error}"
-												style="color: red"></p>
+			<form action="/back/producto" method="post" enctype="multipart/form-data">
+				<p th:if="${error !=null}" th:text="${error}" style="color: red"></p>
 				<div class="row mb-3">
 					<div class="col-md-6">
 						<div class="form-floating mb-3 mb-md-0">
-							<input th:ob class="form-control" name="name"
-								id="inputFirstName" type="text" placeholder="Ingrese su nombre"
-								th:value="${name}" /> <label style="color: gray"
+							<input th:ob class="form-control" name="name" id="inputFirstName" type="text"
+								placeholder="Ingrese su nombre" th:value="${name}" /> <label style="color: gray"
 								for="inputFirstName">Nombre</label>
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="form-floating mb-3 mb-md-0">
-							<input  class="form-control" name="status"
-								id="inputFirstName" type="text" placeholder="estado"
-								th:value="${status}" /> <label style="color: gray"
-								for="inputFirstName">Estado</label>
+						<select class="custom-select" name="status">
+							<option selected>Seleccione el estado de producto</option>
+							<option th:each="estado : ${estados}" th:value="${estado}">
+								<span th:text="${estado}"></span>
+							</option>
+						</select>
+					</div>
+					<div class="col-md-6 mb-3">
+						<div class="form-floating">
+							<textarea id="medidasTextarea" name="size" rows="4" cols="50">
+							</textarea>
+							<label style="color: gray" for="medidasTextarea">Medidas</label>
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
 						<div class="form-floating">
-							<input class="form-control" name="size"
-								id="inputLastName" type="text"
-								placeholder="Enter your last name" th:value="${size}" /> <label
-								style="color: gray" for="inputLastName">Medidas</label>
+							<input class="form-control" name="category" id="inputLastName" type="text"
+								placeholder="Enter your last name" th:value="${category}" /> <label style="color: gray"
+								for="inputLastName">Categoria</label>
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
 						<div class="form-floating">
-							<input  class="form-control" name="category"
-								id="inputLastName" type="text"
-								placeholder="Enter your last name" th:value="${category}" /> <label
-								style="color: gray" for="inputLastName">Categoria</label>
-						</div>
-					</div>
-					<div class="col-md-6 mb-3">
-						<div class="form-floating">
-							<input class="form-control" name="description"
-								id="inputLastName" type="text"
+							<input class="form-control" name="description" id="inputLastName" type="text"
 								placeholder="Enter your last name" th:value="${description}" /> <label
 								style="color: gray" for="inputLastName">Descripcion</label>
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
+						<select class="custom-select" name="rawMaterials">
+							<option selected>Seleccione el material</option>
+							<option th:each="material : ${materiales}" th:value="${material}">
+								<span th:text="${material}"></span>
+							</option>
+						</select>
+					</div>
+					<div class="col-md-6 mb-3">
 						<div class="form-floating">
-							<input  class="form-control" name="rawMaterials"
-								id="inputLastName" type="number" placeholder="portion"
-								th:value="${rawMaterials}" /> <label style="color: gray"
-								for="inputLastName">Materiales</label>
+							<input class="form-control" name="cost" id="inputprecio" type="number" placeholder="costo"
+								th:value="${cost}" /> <label style="color: gray" for="inputLastName">Costo</label>
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
 						<div class="form-floating">
-							<input  class="form-control" name="cost"
-								id="inputprecio" type="number" placeholder="costo"
-								th:value="${cost}" /> <label style="color: gray"
-								for="inputLastName">Costo</label>
+							<input class="form-control" name="price" id="inputprecio" type="number" placeholder="price"
+								th:value="${cost}" /> <label style="color: gray" for="inputLastName">Precio</label>
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
 						<div class="form-floating">
-							<input class="form-control" name="price"
-								id="inputprecio" type="number" placeholder="price"
-								th:value="${cost}" /> <label style="color: gray"
-								for="inputLastName">Precio</label>
+							<input class="form-control" name="stock" id="inputprecio" type="number" placeholder="stock"
+								th:value="${stock}" /> <label style="color: gray" for="inputLastName">Stock</label>
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
 						<div class="form-floating">
-							<input class="form-control" name="stock"
-								id="inputprecio" type="number" placeholder="stock"
-								th:value="${stock}" /> <label style="color: gray"
-								for="inputLastName">Stock</label>
+							<input class="form-control" name="iva" id="inputprecio" type="number" placeholder="iva"
+								th:value="${iva}" /> <label style="color: gray" for="inputLastName">IVA</label>
 						</div>
 					</div>
-					<div class="col-md-6 mb-3">
-						<div class="form-floating">
-							<input class="form-control" name="iva"
-								id="inputprecio" type="number" placeholder="iva"
-								th:value="${iva}" /> <label style="color: gray"
-								for="inputLastName">IVA</label>
-						</div>
-					</div>
-					
+
 				</div>
 
-				<div>
-					<div>
-						<label>Cargar foto de perfil</label>
-					</div>
-				</div>
 				<div class="form-floating mb-3">
-					<input style="color: gray" class="form-control" name="file"
-						id="inputEmail" type="file"/>
-					<label>Cargar foto de perfil</label>
+					<input style="color: gray" class="form-control" name="file" id="inputEmail" type="file" />
 				</div>
 
 				<div class="mt-4 mb-0">
@@ -142,8 +121,7 @@
 				</div>
 				<div class="mb-3">
 					<label for="nombreProducto" class="form-label">Nombre
-						Producto</label> <input type="text" class="form-control"
-						id="nombreProducto" name="name">
+						Producto</label> <input type="text" class="form-control" id="nombreProducto" name="name">
 				</div>
 				<div class="mb-3">
 					<label for="statusProducto" class="form-label">Seleccionar
@@ -156,8 +134,7 @@
 				<div class="mb-3">
 					<label for="descripcionProducto" class="form-label">Descripcion
 						Producto</label>
-					<textarea class="form-control" id="descripcionProducto" rows="3"
-						name="description"></textarea>
+					<textarea class="form-control" id="descripcionProducto" rows="3" name="description"></textarea>
 				</div>
 				<label for="nada" class="form-label">COMPLETAR ATRIBUTOS Y
 					ETC.</label>

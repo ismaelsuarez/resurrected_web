@@ -1,5 +1,8 @@
 package com.resurrected.controller;
 
+import java.util.EnumSet;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,7 +25,14 @@ public class BackTestController {
 	ProductService productService;
 
 	@GetMapping("/inicio")
-	public String inicio() {
+	public String inicio(ModelMap model) {
+		
+		Set<Status> estados = EnumSet.allOf(Status.class);
+        model.put("estados", estados);
+        
+        Set<RawMaterials> materiales = EnumSet.allOf(RawMaterials.class);
+        model.put("materiales", materiales);
+		
 		return "back/inicio.html";
 	}
 	
@@ -38,16 +48,43 @@ public class BackTestController {
 	
 	
 	@PostMapping("/producto")
-	public String regisProduct(ModelMap model,@RequestParam MultipartFile file,@RequestParam String name,@RequestParam Status status, @RequestParam String size,@RequestParam String category,
-			@RequestParam String description,@RequestParam RawMaterials rawMaterials, @RequestParam Double cost,@RequestParam Double price,
-			@RequestParam Integer stock, @RequestParam Double iva) {
+	public String regisProduct(ModelMap model,
+			@RequestParam(required=false) MultipartFile file,
+			@RequestParam String name,
+			@RequestParam String status,
+			@RequestParam String size,
+			@RequestParam String category,
+			@RequestParam String description,
+			@RequestParam String rawMaterials,
+			@RequestParam String cost,
+			@RequestParam String price,
+			@RequestParam String stock, 
+			@RequestParam String iva) {
 
 		try {
 			
-			productService.createProduct(file, name, status, size, category, description, rawMaterials, cost, price, stock, iva);
+			System.out.println("ENTRO");
+			
+			System.out.println(Status.valueOf(status));
+			System.out.println(Double.valueOf(cost));
+			System.out.println(Double.valueOf(price));
+			System.out.println(Integer.valueOf(stock));
+			System.out.println(Double.valueOf(iva));
+			
+			productService.createProduct(file,
+					name,
+					Status.valueOf(status),
+					size,
+					category,
+					description,
+					RawMaterials.valueOf(rawMaterials),
+					Double.valueOf(cost),
+					Double.valueOf(price),
+					Integer.valueOf(stock),
+					Double.valueOf(iva));
 			
 			
-		} catch (ErrorService ex) {
+		} catch (Exception ex) {
 			model.put("error", ex.getMessage());
 			model.put("name", name);
 			model.put("status", status);
@@ -60,10 +97,10 @@ public class BackTestController {
 			model.put("iva", iva);
 			model.put("file", file);
 			
-			return "redirect:/back/inicio";
+			return this.inicio(model);
 		}
 		
-		return "redirect:/back/inicio";
+		return this.inicio(model);
 	}
 	
 	

@@ -36,6 +36,7 @@ public class ProductService {
 		product.setName(name);
 		product.setSize(size);
 		product.setStatus(status);
+		product.setCategory(category);
 		product.setDescription(description);
 		product.setRawMaterials(rawMaterials);
 		product.setCost(cost);

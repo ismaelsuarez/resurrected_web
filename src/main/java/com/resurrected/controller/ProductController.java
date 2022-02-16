@@ -1,5 +1,8 @@
 package com.resurrected.controller;
 
+import java.util.EnumSet;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -27,7 +30,7 @@ public class ProductController {
 	ProductRepository productRepository;
 	
 	@GetMapping("/producto")
-	public String produc() {
+	public String product() {
 		return "redirect:/back/inicio";
 	}
 	
