@@ -1,0 +1,255 @@
+<<<Tarjetas fijas>>>
+ <h3 class="h3-sug">Sugerencias</h3>
+            <div class="sugerencias">
+                <div class="hola">
+                    <img src="img/jardin.jpg" alt="imagen" />
+                    <h4>Servicios de Jardinería</h4>
+                    <br>
+                    <a th:href="@{/gardener/list}">Ver más</a>
+                </div>
+                <div class="hola">
+                    <img src="img/Cuidador/c1.jpg" alt="imagen" />
+                    <h4>Cuidado de Personas</h4>
+                    <p>
+                    </p>
+                    <a th:href="@{/caregiver/list}">Ver más</a>
+                </div>
+                <div class="hola">
+                    <img src="img/Limpieza/limp5(2).jpg" alt="imagen" />
+                    <h4>Servicio Doméstico
+                    </h4>
+                    <p>
+                    </p>
+                    <a th:href="@{/cleaning/list}">Ver más</a>
+                </div>
+                <div class="hola">
+                    <img src="img/Paseador/p10.jpg" alt="imagen" />
+                    <h4>Paseador de Mascotas</h4>
+                    <p>
+                    </p>
+                    <a th:href="@{/petwalker/list}">Ver más</a>
+                </div>
+            </div>
+{{{CSS}}}
+
+.h3-sug {
+  font-family: "Licorice", cursive;
+  font-size: 40px;
+  text-shadow: 1px 2px 3px white;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 80px;
+  margin-top: 40px;
+}
+
+.sugerencias {
+  width: 100%;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 1fr;
+  gap: 20px;
+  padding: 0px 20px;
+  justify-content: space-between;
+}
+
+.sugerencias img {
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.sugerencias h4 {
+  margin-top: 10px;
+  text-align: center;
+}
+.sugerencias p {
+  margin: 10px;
+}
+
+.sugerencias .hola a {
+  color: #043104;
+}
+
+.sugerencias .hola a:hover {
+  color: #043104;
+  border: 2px solid #043104;
+  transition: 0.5s;
+}
+
+.hola {
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  /* background-color: #f0a33130; */
+  background-color: #ffe8d6;
+}
+-------------------------------------------------------------------------------
+<<<Tarjetas con movimienot>>>
+<h3 class="h3-sug">Populares</h3>
+            <div class="box">
+                <div class="card">
+                    <a th:href="@{/petwalker/list}">
+                        <div class="imgBx">
+                            <img src="img/Paseador/p5.jpg" />
+                        </div>
+                        <div class="details">
+                            <p>Paseador</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a th:href="@{/cleaning/list}">
+                        <div class="imgBx">
+                            <img src="img/Limpieza/limp17.jpg" />
+                        </div>
+                        <div class="details">
+                            <p>Servicio Doméstico</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a th:href="@{/gardener/list}">
+                        <div class="imgBx">
+                            <img src="img/Jardìn/j14.jpg" />
+                        </div>
+                        <div class="details">
+                            <p>Servicios de jardinería</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a th:href="@{/caregiver/list}">
+                        <div class="imgBx">
+                            <img src="img/Cuidador/c10.jpg" alt="cuidado de personas" />
+                        </div>
+                        <div class="details">
+                            <p>Cuidado de Personas</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+{{{CSS}}}
+
+.box {
+  text-emphasis-color: black;
+  color: black;
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  background: #ffe8d633;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  /* background: #E1D0D1; */
+  background: #ffe8d6;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  /* background: #b87cac; definir color */
+  background: #ddbea9;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  /* background: #90A9B0;definir color */
+  background: #cb997e; /*definir color*/
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.card:hover:before {
+  transform: rotate(20deg);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+.card:hover:after {
+  transform: rotate(10deg);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+.card .imgBx {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: #222;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.card:hover .imgBx {
+  bottom: 60px;
+}
+
+.card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .details {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -15px;
+  height: 60px;
+  text-align: center;
+  /* color: black; */
+}
+
+.card .details a {
+  padding: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  color: #044e64;
+  display: flex;
+  text-justify: distribute-all-lines;
+  text-align: center;
+  justify-content: center;
+}
+
+.card p {
+  color: black;
+}
