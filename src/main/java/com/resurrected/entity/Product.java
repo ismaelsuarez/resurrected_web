@@ -26,8 +26,8 @@ public class Product {
 	private String name;
 	@Column(name = "dv_status")
     private Status status;
-	@Column(name = "dv_waist")
-    private String waist;
+	@Column(name = "dv_size")
+    private String size;
 	@Column(name = "dv_category")
     private String category;
 	@Column(name = "dv_description")

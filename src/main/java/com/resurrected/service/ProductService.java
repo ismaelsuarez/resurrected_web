@@ -28,13 +28,13 @@ public class ProductService {
 	private PhotoService photoService;
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
-	public Product createProduct(MultipartFile file, String name, Status status, String waist, String category,
+	public Product createProduct(MultipartFile file, String name, Status status, String size, String category,
 			String description, RawMaterials rawMaterials, Double cost, Double price, Integer stock, Double iva)
 			throws ErrorService {
 
 		Product product = new Product();
 		product.setName(name);
-		product.setWaist(waist);
+		product.setSize(size);
 		product.setStatus(status);
 		product.setDescription(description);
 		product.setRawMaterials(rawMaterials);
@@ -50,7 +50,7 @@ public class ProductService {
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
-	public Product editProduct(String idProduct, MultipartFile file, String name, Status status, String waist,
+	public Product editProduct(String idProduct, MultipartFile file, String name, Status status, String size,
 			String description, RawMaterials rawMaterials, Double cost, Double price, Integer stock, Double iva)
 			throws ErrorService {
 
@@ -60,7 +60,7 @@ public class ProductService {
 
 			Product product = checkP.get();
 			product.setName(name);
-			product.setWaist(waist);
+			product.setSize(size);
 			product.setStatus(status);
 			product.setDescription(description);
 			product.setRawMaterials(rawMaterials);
@@ -84,7 +84,7 @@ public class ProductService {
 	public Product changeStatus(String idProduct, Status status) throws ErrorService {
 		Optional<Product> checkP = productRepository.findById(idProduct);
 		if (checkP != null) {
-			Product product = checkP.get();			
+			Product product = checkP.get();
 			product.setStatus(status);
 			if (status.equals(Status.publish)) {
 				product.setPublishDate(new Date());
@@ -95,7 +95,6 @@ public class ProductService {
 			throw new ErrorService("No se encuentra el id del producto, para poder publicarlo");
 		}
 	}
-
 
 	@Transactional
 	public List<Product> listCheck(String id) {
@@ -126,15 +125,11 @@ public class ProductService {
 		Product product = check.get();
 		return product;
 	}
-	
-	
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
 	public List<Product> findByStatus(Status status) throws ErrorService {
-	return productRepository.findByStatus(status);
+		return productRepository.findByStatus(status);
 	}
-
-
 
 	@Transactional(readOnly = true)
 	public List<Product> findAllS() {
