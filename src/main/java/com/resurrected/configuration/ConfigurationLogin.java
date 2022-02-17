@@ -33,7 +33,7 @@ public class ConfigurationLogin extends WebSecurityConfigurerAdapter {
 
 		http.authorizeRequests().antMatchers("/css/*", "/js/*", "/img/*", "/**").permitAll().and().formLogin()
 				.loginPage("/login").loginProcessingUrl("/logincheck").usernameParameter("email")
-				.passwordParameter("password").defaultSuccessUrl("/back/inicio").failureUrl("/login?error=error").permitAll().and()
+				.passwordParameter("password").defaultSuccessUrl("/admin/inicio").failureUrl("/login?error=error").permitAll().and()
 				.logout().logoutUrl("/logout").logoutSuccessUrl("/login").permitAll().and().csrf().disable();
 	}
 }
