@@ -28,15 +28,14 @@ public class ProductController {
 
 	@Autowired
 	ProductRepository productRepository;
-	
-	@GetMapping("/producto")
-	public String product() {
-		return "redirect:/back/inicio";
+
+	@GetMapping("/productos")
+	public String productos(ModelMap model, @RequestParam(required = false) String status) {
+
+		// TODO: listar todos los productos => hacer paginable => agregar filtros.
+		model.put("status", status);
+
+		return "productos.html";
 	}
-	
-	
-	
-	
-	
 
 }

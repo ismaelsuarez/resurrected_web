@@ -35,14 +35,6 @@ public class ClientController {
 	public String registrate() {
 		return "registrate.html";
 	}
-	@GetMapping("/index")
-	public String index() {
-		return "indexEmi.html";
-	}
-	@GetMapping("/producto")
-	public String producto() {
-		return "product.html";
-	}
 
 	@GetMapping("/login")
 	public String login() {
@@ -55,14 +47,12 @@ public class ClientController {
 		return "perfil.html";
 	}
 
-	
-
 	@PreAuthorize("hasAnyRole('ROLE_USER_CLIENT','ROLE_USER_ADMIN')")
 	@GetMapping("/edit")
 	public String edit(ModelMap model, HttpSession session) {
 		Client u = (Client) session.getAttribute("sessionuser");
 		Optional<Client> check = clientRepository.findById(u.getId());
-		
+
 		Client client = check.get();
 		model.put("id", u.getId());
 		model.put("name", client.getName());
