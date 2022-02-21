@@ -47,7 +47,6 @@ public class Ticket {
 	private CashRegister cashRegister;
 
 	@OneToMany
-	private List<Product> product;
+	private List<Product> products;
 	
-
 }
