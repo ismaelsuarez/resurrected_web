@@ -1,5 +1,6 @@
 package com.resurrected.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -10,8 +11,12 @@ import com.resurrected.enums.StatusClient;
 import lombok.Data;
 
 @Data
-public class ClientModel {
+public class ClientModel implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2951597719173953363L;
 	private String id;
     private String name;
     private String lastname;

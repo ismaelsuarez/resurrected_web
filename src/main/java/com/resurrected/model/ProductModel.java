@@ -1,5 +1,6 @@
 package com.resurrected.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -10,8 +11,12 @@ import com.resurrected.enums.Status;
 import lombok.Data;
 
 @Data
-public class ProductModel {
+public class ProductModel implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1860435211418386266L;
 	private String id;
 	private String name;
     private String size;

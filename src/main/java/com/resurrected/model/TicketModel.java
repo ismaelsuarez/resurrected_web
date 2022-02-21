@@ -1,5 +1,6 @@
 package com.resurrected.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -8,8 +9,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 import lombok.Data;
 
 @Data
-public class TicketModel {
+public class TicketModel implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2628862223844877534L;
 	private String id;
 	private Boolean status;
 	private Boolean delivery;

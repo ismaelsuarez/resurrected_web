@@ -1,18 +1,16 @@
 package com.resurrected.model;
 
-
-import java.util.Date;
-import java.util.List;
-
-import javax.persistence.Column;
-
-import org.springframework.format.annotation.DateTimeFormat;
+import java.io.Serializable;
 
 import lombok.Data;
 
 @Data
-public class CashRegisterModel {
+public class CashRegisterModel implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -221881777840931058L;
 	private String id;
 	private Boolean status;
 	
