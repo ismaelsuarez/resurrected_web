@@ -33,7 +33,7 @@ public class TicketService {
 			Client client = check.get();
 			Ticket ticket = new Ticket();
 			ticket.setClient(client);
-			ticket.setProduct(product);
+			ticket.setProducts(product);
 			ticket.setLoad(new Date());
 			ticket.setStatus(true);
 			return ticketRepository.save(ticket);
@@ -51,7 +51,7 @@ public class TicketService {
 
 		if (check != null) {
 			Ticket ticket = check.get();
-			ticket.setProduct(product);
+			ticket.setProducts(product);
 			ticket.setEdit(new Date());
 			return ticketRepository.save(ticket);
 		} else {
@@ -102,7 +102,7 @@ public class TicketService {
 		Optional<Ticket> check = ticketRepository.findById(idticket);
 		if (check != null) {
 			Ticket ticket = check.get();
-			ticket.setProduct(null);
+			ticket.setProducts(null);
 			ticket.setClient(null);
 			ticketRepository.delete(ticket);
 

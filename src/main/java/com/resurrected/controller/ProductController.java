@@ -1,5 +1,8 @@
 package com.resurrected.controller;
 
+import java.util.EnumSet;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -25,71 +28,14 @@ public class ProductController {
 
 	@Autowired
 	ProductRepository productRepository;
-	
-	@GetMapping("/producto")
-	public String produc() {
-		return "redirect:/back/inicio";
-	}
-	
-	
-	// @PreAuthorize("hasAnyRole('ROLE_USER_ADMIN')")
-	@PostMapping("/producto")
-	public String regisProduct(ModelMap model,@RequestParam MultipartFile file,@RequestParam String name,@RequestParam Status status, @RequestParam String size,@RequestParam String category,
-			@RequestParam String description,@RequestParam RawMaterials rawMaterials, @RequestParam Double cost,@RequestParam Double price,
-			@RequestParam Integer stock, @RequestParam Double iva) {
 
-		try {
-			
-			productService.createProduct(file, name, status, size, category, description, rawMaterials, cost, price, stock, iva);
-			
-			
-		} catch (ErrorService ex) {
-			model.put("error", ex.getMessage());
-			model.put("name", name);
-			model.put("status", status);
-			model.put("size", size);
-			model.put("category", category);
-			model.put("rawMaterials", rawMaterials);
-			model.put("cost", cost);
-			model.put("price", price);
-			model.put("stock", stock);
-			model.put("iva", iva);
-			model.put("file", file);
-			
-			return "redirect:/back/inicio";
-		}
-		
-		return "redirect:/back/inicio";
-	}
-	
-	// @PreAuthorize("hasAnyRole('ROLE_USER_ADMIN')")
-	@PostMapping("/edit_producto")
-	public String editProduct(ModelMap model,@RequestParam String id,@RequestParam MultipartFile file,@RequestParam String name,@RequestParam Status status, @RequestParam String size,@RequestParam String category,
-			@RequestParam String description,@RequestParam RawMaterials rawMaterials, @RequestParam Double cost,@RequestParam Double price,
-			@RequestParam Integer stock, @RequestParam Double iva) {
+	@GetMapping("/productos")
+	public String productos(ModelMap model, @RequestParam(required = false) String status) {
 
-		try {
-			
-			productService.editProduct(id, file, name, status, size, description, rawMaterials, cost, price, stock, iva);
-			
-			
-		} catch (ErrorService ex) {
-			model.put("error", ex.getMessage());
-			model.put("name", name);
-			model.put("status", status);
-			model.put("size", size);
-			model.put("category", category);
-			model.put("rawMaterials", rawMaterials);
-			model.put("cost", cost);
-			model.put("price", price);
-			model.put("stock", stock);
-			model.put("iva", iva);
-			model.put("file", file);
-			
-			return "redirect:/back/inicio";
-		}
-		
-		return "redirect:/back/inicio";
+		// TODO: listar todos los productos => hacer paginable => agregar filtros.
+		model.put("status", status);
+
+		return "productos.html";
 	}
 
 }

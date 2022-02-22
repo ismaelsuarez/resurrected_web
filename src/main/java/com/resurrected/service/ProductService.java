@@ -36,6 +36,7 @@ public class ProductService {
 		product.setName(name);
 		product.setSize(size);
 		product.setStatus(status);
+		product.setCategory(category);
 		product.setDescription(description);
 		product.setRawMaterials(rawMaterials);
 		product.setCost(cost);
@@ -109,7 +110,7 @@ public class ProductService {
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
 	public void removeProduct(String idProduct) throws ErrorService {
-
+		System.out.println("ID EN EL METODO: "+idProduct);
 		Optional<Product> check = productRepository.findById(idProduct);
 		if (check != null) {
 			Product product = check.get();
