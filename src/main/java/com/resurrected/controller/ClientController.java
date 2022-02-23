@@ -36,25 +36,18 @@ public class ClientController {
 		return "registrate.html";
 	}
 
-	@GetMapping("/login")
-	public String login() {
-		return "login.html";
-	}
-
 	@PreAuthorize("hasAnyRole('ROLE_USER_CLIENT','ROLE_USER_ADMIN')")
 	@GetMapping("/perfil")
 	public String perfil() {
 		return "perfil.html";
 	}
 
-	
-
 	@PreAuthorize("hasAnyRole('ROLE_USER_CLIENT','ROLE_USER_ADMIN')")
 	@GetMapping("/edit")
 	public String edit(ModelMap model, HttpSession session) {
 		Client u = (Client) session.getAttribute("sessionuser");
 		Optional<Client> check = clientRepository.findById(u.getId());
-		
+
 		Client client = check.get();
 		model.put("id", u.getId());
 		model.put("name", client.getName());
@@ -81,23 +74,22 @@ public class ClientController {
 		return "redirect:/perfil";
 	}
 
-	@PostMapping("/registrate")
+	@PostMapping("/registrar")
 	public String register(ModelMap model, @RequestParam String name, @RequestParam String lastname,
-			@RequestParam String email, @RequestParam String password1, @RequestParam String password2,
-			@RequestParam MultipartFile file) {
+			@RequestParam String email, @RequestParam String password1, @RequestParam String password2) {
 
 		try {
-			clientService.createClient(name, lastname, email, password1, password2, file);
+			clientService.createClient(name, lastname, email, password1, password2, null);
 
 			return "index.html";
 		} catch (ErrorService ex) {
 
 			model.put("error", ex.getMessage());
 			model.put("name", name);
+			model.put("lastname", lastname);
 			model.put("email", email);
 			model.put("password1", password1);
 			model.put("password2", password2);
-			model.put("file", file);
 
 			return "registrate.html";
 

@@ -19,7 +19,5 @@ public class CashRegister {
 	private String id;
 	 @Column(name = "dv_status")
 	private Boolean status;
-	
-
 
 }
