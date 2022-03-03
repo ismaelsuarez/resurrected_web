@@ -1,10 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-*{
- margin: 0;
- padding: 0;
-}
 
 
 .bi-heart-fill{
@@ -52,9 +48,10 @@ a{
 
 
 .carousel{
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 	margin-top: 150px;
+	height: 580px;
 	margin-bottom: 100px;
 	border: 7px solid #feff6f;
 	box-shadow: 7px 5px 0px #e26628;	
@@ -75,54 +72,52 @@ a{
 .categorias-remeras, .categorias-vestidos, .categorias-camperas, .categorias-pantalones {
 	background-image: url("../img/remeras.png");
 	opacity: 0.9;
-	width: 600px;
-	height: 300px;
+	width: 380px;
+	height: 150px;
 	margin-bottom: 50px;
 	text-align:center;
-	
+	margin-left: 50px;
+	margin-right: 50px;
+
 	box-shadow: 7px 5px 0px #e26628;
 }
 
 
 .pantalones h3, .vestidos h3, .remeras h3,.camperas h3{
 		font-family: 'Fugaz One', cursive;
-		font-size: 50px;
+		font-size: 30px;
 		color: #feff6f;
 		text-align: center;	
 		text-shadow: 5px 3px 0px #e26628;
 }
 
 
-.remeras, .vestidos, .camperas{
+.remeras, .vestidos, .camperas, .pantalones{
 	background-color: white;
-	height: 60px;
-	width: 300px;
-	margin:0px auto;
-	margin-top: 100px;
+	height: 50px;
+	width: 210px;
+	margin: 0px auto;
+	margin-top: 50px;
 	
 }
 
-.pantalones{
-		background-color: white;
-		height: 60px;
-		width: 350px;
-		margin:0px auto;
-		margin-top: 100px;
 
-}
 
 
 
 
 .footer{
-	background-color: #e26628;
+	background-color: rgb(255, 255, 255);
 	width: 100%px;
-	height: 100px;
+	height: 400px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-end;
 		justify-content: space-around;
+		border: 5px solid #feff6f;
+
+
 
 }
 
@@ -133,3 +128,65 @@ a{
 	justify-content: space-around;
 	
 }
+/* CSS INDEX CHULO */
+
+
+.btn.btn-newsl{
+float: right; 
+box-shadow: 7px 5px 0px#e26628; 
+background-color: #feff6f; 
+color: black; 
+width:140px;
+margin-top: 10px;
+}
+
+
+
+.linksfooter{
+	float: right;
+}
+/* CSS PRODUCTO */
+
+.card {
+	border: 1px solid rgb(222, 222, 222);
+
+	box-shadow: 7px 5px 0px rgb(236, 236, 236);
+	margin: 40px 40px 20px 40px;
+	
+}
+
+.card-title-gral h3{
+		font-family: 'Fugaz One', cursive;
+		font-size: 30px;
+		color: #feff6f;
+		text-align: center;	
+		text-shadow: 5px 3px 0px #e26628;
+		
+}
+
+.card-text{
+	float: right;
+	}
+
+
+
+.card-img-top{
+	width:auto;  height: 520px; 
+	}
+
+/* CSS POP UP LOGUIN Y REGISTRO */
+
+.modal-content{
+	background: linear-gradient(to bottom, #feff6f,#feffa8);
+	box-shadow: 7px 5px 0px #e26628;
+	
+		}
+
+
+
+
+
+
+
+
+

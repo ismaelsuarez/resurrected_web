@@ -35,6 +35,15 @@ public class ClientController {
 	public String registrate() {
 		return "registrate.html";
 	}
+	@GetMapping("/producto")
+	public String producto() {
+		return "product.html";
+	}
+	@GetMapping("/inicio")
+	public String inicio() {
+		return "inicio.html";
+	}
+
 
 	@PreAuthorize("hasAnyRole('ROLE_USER_CLIENT','ROLE_USER_ADMIN')")
 	@GetMapping("/perfil")
