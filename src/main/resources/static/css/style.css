@@ -133,3 +133,104 @@ a{
 	justify-content: space-around;
 	
 }
+
+
+/* PRODUCTO STOCK */
+
+.eee{
+	margin-top: 20px;
+}
+
+.alta{
+	background-color: #feff6f;
+	height: 50px;
+	width: 60%;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: flex-end;
+    align-content: center;
+	align-items: center;
+	box-shadow: 3px 3px 0px #e26628;
+}
+
+
+
+.modificar{
+	background-color: #feff6f;
+	height: 50px;
+	width: 60%;
+	margin-left: 40%;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: flex-start;
+    align-content: center;
+	align-items: center;
+	box-shadow: 3px 3px 0px #e26628;
+}
+
+.modificar_titulo{
+	font-family: 'Fugaz One', cursive;
+	font-size: 25px;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+.alta_enviar{
+	width: 70%;
+	margin-left: 15%;
+	display: flex;
+	justify-content: center;
+}
+	
+
+.alta_titulo{
+	font-family: 'Fugaz One', cursive;
+	font-size: 25px;
+	margin-top: 10px;
+	margin-right: 20px;
+}
+
+
+.alta_formulario{
+	width: 70%;
+	margin-left: 15%;
+}
+
+.modificar_formulario{
+	width: 70%;
+	margin-left: 15%;
+}
+
+
+@media screen and (max-device-width:768px), screen and (max-width:768px) {
+	
+    .alta{
+		height: 30px;
+	}
+
+	.alta_titulo{
+		font-size: 15px;
+		margin-right: 10px;
+	}
+
+
+	.logo h2{
+		font-family: 'Fugaz One', cursive;
+		margin-left: 20px;
+		font-size: 15px;
+		margin-top: 5px;
+	}
+
+
+	.d-flex{
+		width: 50%;
+	}
+
+
+
+
+}
+
+
