@@ -44,6 +44,10 @@ public class ClientController {
 		return "inicio.html";
 	}
 
+	@GetMapping("/editarproducto")
+	public String productstock() {
+		return "product-stock.html";
+	}
 
 	@PreAuthorize("hasAnyRole('ROLE_USER_CLIENT','ROLE_USER_ADMIN')")
 	@GetMapping("/perfil")
