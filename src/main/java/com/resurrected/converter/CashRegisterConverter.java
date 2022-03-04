@@ -12,7 +12,7 @@ import com.resurrected.model.CashRegisterModel;
 import lombok.RequiredArgsConstructor;
 
 @Component("CashRegisterConverter")
-@RequiredArgsConstructor(onConstructor = @Autowired)
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class CashRegisterConverter extends Converter<CashRegisterModel, CashRegister> {
 	
 	@Override
