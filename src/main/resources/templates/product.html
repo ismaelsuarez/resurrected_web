@@ -11,18 +11,39 @@
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 	<!--  CSS -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 
-	<link rel="stylesheet" href="css/styleEmi.css" type="text/css" media="all">
-	<!-- <link rel="stylesheet" href="css/style.css"> -->
+	<!-- link fuente -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Passion+One:wght@700&display=swap"
+		rel="stylesheet">
 
+	<!-- link roboto -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Francois+One&family=Passion+One:wght@700&family=Roboto:wght@100;400&display=swap"
+		rel="stylesheet">
+
+	<!-- fugas -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+
+	<!--  Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+
+	<!--scrip para el icono busqueda  -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<title>Home - Resurrected</title>
 </head>
 
 
 
-<header>
 
+<header>
 	<!-- Login Modal -->
 	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
 		<div class="modal-dialog">
@@ -105,18 +126,24 @@
 	</div>
 
 
-
 	<div class="encabezado fixed-top">
 
-		<nav class="navbar  navbar-light bg-light">
+		<nav class="navbar">
 			<div class="container-fluid">
-				<img src="img/resu.png" alt="logo" width="150" height="30">
 
+				<div class="logo">
+					<h2 class="navbar-brand" href="#">RESURRECTED</h2>
+				</div>
 
-				<form class="d-flex justify-content-center">
-					<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-					<button class="btn btn-outline-light btn-dark" type="submit">Buscar</button>
+				<form class="d-flex justify-content-center ">
+					<input class="form-control me-2" style="padding: 0 400px 0 10px; " type="search"
+						placeholder="Buscar" aria-label="Search">
+
+					<button class="btn btn-outline-light" style="background-color:#e26628;" type="submit"
+						src="/img/outline_search_black_24dp.png"><i class="fa fa-search"></i></button>
+
 				</form>
+
 
 				<div class="nav justify-content-end">
 					<li class="nav-item">
@@ -128,22 +155,26 @@
 							href="#">Iniciar
 							sesión</a>
 					</li>
-
 					<!-- CARRITO Y LISTA DE DESEOS -->
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-						class="bi bi-heart-fill" viewBox="0 0 16 16">
-						<path fill-rule="evenodd"
-							d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-					</svg>
+					<div class="listadedeseos">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+							class="bi bi-heart-fill" viewBox="0 0 16 16">
+							<path fill-rule="evenodd"
+								d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+						</svg>
+					</div>
 
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-						class="bi bi-cart-fill" viewBox="0 0 16 16">
-						<path
-							d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-					</svg>
+					<div class="carritodecompras">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+							class="bi bi-cart-fill" viewBox="0 0 16 16">
+							<path
+								d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+						</svg>
+
+					</div>
+
 
 				</div>
-			</div>
 		</nav>
 
 		<!-- FIN DEL PRIMER NAVBAR -->
@@ -152,7 +183,7 @@
 		<!-- SEGUNDO NAVBARRRRR -->
 
 
-		<nav class="navbar  navbar-expand-lg">
+		<nav class="navbar  navbar-expand-lg  navbar-light" style="background-color:#feff6f;">
 			<div class="container-fluid ">
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -170,7 +201,7 @@
 								data-bs-toggle="dropdown" aria-expanded="false">
 								Categorías
 							</a>
-							<ul class="dropdown-menu bg-warning" aria-labelledby="navbarDropdownMenuLink">
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" href="#">Remeras</a></li>
 								<li><a class="dropdown-item" href="#">Camisas</a></li>
 								<li><a class="dropdown-item" href="#">Camperas</a></li>
@@ -188,9 +219,6 @@
 							<a class="nav-link" href="#">Ofertas</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Modelos exclusivos</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="#">Zonas de envío</a>
 						</li>
 					</ul>
@@ -206,118 +234,176 @@
 	<!-- Filtros -->
 	<div class="container">
 		<div class="row" style="margin-top: 150px;">
-		<div class="col-md-1" >	</div>
-			<div class="col-md-9 " >
-			<h3 class="card-title-gral">Card title</h3>
+			<div class="col-md-1"> </div>
+			<div class="col-md-9 ">
+			
+				<h3 class="card-title-gral">Card title</h3>
 			</div>
-			<div class="col-md-1" >	
+			<div class="col-md-1">
 
-						<a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Dropdown link
-						</a>
+				<a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					Dropdown link
+				</a>
 
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</div>
-
-				
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<a class="dropdown-item" href="#">Action</a>
+					<a class="dropdown-item" href="#">Another action</a>
+					<a class="dropdown-item" href="#">Something else here</a>
+				</div>
 			</div>
+
+
 		</div>
+	</div>
 
 
 	</div>
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-lg-12">
+			
 				<div class="card shadow-lg border-0 rounded-lg mt-5">
 					<div class="card-group">
-						<div class="card" style="width: 450px; height: 670px; margin: 20px">
-							<img src="/img/mascota6.jpeg" class="card-img-top" alt="..."
-								style="width: 390px; height: 520px; ">
+						<div class="col-lg-4">
+						<div class="card" >
+							<img src="/img/ropa/Jardinero Naza.png" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a wider card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit longer.</p>
-								<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+								<p class="card-text" >Last updated 3 mins ago</p>
 							</div>
-						</div>
-						<div class="card" style="width: 450px; height: 670px; margin: 20px">
-							<img src="/img/mascota6.jpeg" class="card-img-top" alt="..."
-								style="width: 390px; height: 520px; ">
+						</div></div>
+						<div class="col-lg-4">
+						<div class="card" >
+							<img src="/img/ropa/Vestido Happy time.png" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a wider card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit longer.</p>
-								<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+								<p class="card-text">Last updated 3 mins ago</p>
 							</div>
-						</div>
-						<div class="card" style="width: 450px; height: 670px; margin: 20px">
-							<img src="/img/mascota6.jpeg" class="card-img-top" alt="..."
-								style="width: 390px; height: 520px; ">
+						</div></div>
+						<div class="col-lg-4">
+						<div class="card" >
+							<img src="/img/ropa/Buzo Washington.png" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a wider card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit longer.</p>
-								<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+								<p class="card-text">Last updated 3 mins ago</p>
 							</div>
-						</div>
+						</div></div>
 
 						<div class="w-100"></div>
-						<div class="card" style="width: 450px; height: 670px; margin: 20px">
-							<img src="/img/mascota6.jpeg" class="card-img-top" alt="..."
-								style="width: 390px; height: 520px; ">
+						<div class="col-lg-4">
+						<div class="card" >
+							<img src="/img/ropa/Vestido Quipao Sense.png" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a wider card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit longer.</p>
-								<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+								<p class="card-text">Last updated 3 mins ago</p>
 							</div>
-						</div>
-						<div class="card" style="width: 450px; height: 670px; margin: 20px">
-							<img src="/img/mascota6.jpeg" class="card-img-top" alt="..."
-								style="width: 390px; height: 520px; ">
+						</div></div>
+						<div class="col-lg-4">
+						<div class="card" >
+							<img src="/img/ropa/Jumper Krieger.png" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a wider card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit longer.</p>
-								<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+								<p class="card-text">Last updated 3 mins ago</p>
 							</div>
-						</div>
-						<div class="card" style="width: 450px; height: 670px; margin: 20px">
-							<img src="/img/mascota6.jpeg" class="card-img-top" alt="..."
-								style="width: 390px; height: 520px; ">
+						</div></div>
+						<div class="col-lg-4">
+						<div class="card" >
+							<img src="/img/ropa/Enterito Le petit fleur.png" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a wider card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit longer.</p>
-								<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+								<p class="card-text">Last updated 3 mins ago</p>
 							</div>
+						</div></div>
+						<div class="w-100"></div>
+						
+						<div class="col-md-5"> </div>
+						<div class="col-md-2 ">
+							<nav aria-label="Page navigation example">
+								<ul class="pagination">
+									<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#">Next</a></li>
+								</ul>
+							</nav>
 						</div>
+						<div class="col-md-5"></div>
+
+						<div class="w-100"></div>
+						
 					</div>
 
 				</div>
-			</div>
+
+
+			
 		</div>
 
 
 	</div>
 
+
 	<!-- CAROUSEL-->
 
 	<!-- FIN CAROUSEL -->
 
-	<!-- Option 1: Bootstrap Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
-
 
 </body>
-<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
+
+<footer class="footer">
+	<div class="container">
+		<div class="row justify-content-center">
+
+
+			<div class="col-lg-5">
+				<div class="Newsletter">
+					<h1>Newsletter</h1>
+					<hr size="6px" color="black" background-color"black" />
+				</div>
+				<form>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+							placeholder="Enter email">
+
+					</div>
+
+					<button type="submit" class="btn btn-newsl">Enviar</button>
+				</form>
+
+			</div>
+			<div class="col-lg-2">
+			</div>
+			<div class="col-lg-5">
+
+
+				<div class="mail-resurrected">
+					<h2>resurrected@resurrected.com </h2>
+					<div class="footer-instagram">
+						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+							class="bi bi-instagram" viewBox="0 0 16 16">
+							<path
+								d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+						</svg>
+					</div>
+					<div class="linksfooter">
+						<h5>Preguntas frecuentes </h5>
+						<h5>Zonas de envio </h5>
+						<h5>Local </h5>
+					</div>
+				</div>
+
+
+
+
+			</div>
+
+
+		</div>
+		
+	
+
+</footer>
 </html>
