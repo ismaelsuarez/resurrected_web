@@ -1,64 +1,51 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-
-.bi-heart-fill{
+.bi-heart-fill {
 	margin: 10px;
 }
 
-.bi-cart-fill{
+.bi-cart-fill {
 	margin: 10px;
 }
 
-
-.navbar{
-	background-color: #feffa8;	
+.navbar {
+	background-color: #feffa8;
 }
 
+.encabezado {
+	align-items: center;
+}
 
-
- .encabezado{
-	 align-items: center;
- }
-
-
-
-.listadedeseos{
+.listadedeseos {
 	color: #e26628;
 }
 
-.carritodecompras{
+.carritodecompras {
 	color: #e26628;
 }
 
-.logo h2{
-	font-family: 'Fugaz One', cursive;
+.logo h2 {
+	font-family: "Fugaz One", cursive;
 	margin-left: 50px;
 	font-size: 25px;
 	margin-top: 10px;
-	
 }
 
-
-
-a{
- font-family: 'Roboto', sans-serif;
+a {
+	font-family: "Roboto", sans-serif;
 }
 
-
-.carousel{
+.carousel {
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-top: 150px;
-	height: 580px;
 	margin-bottom: 100px;
 	border: 7px solid #feff6f;
-	box-shadow: 7px 5px 0px #e26628;	
+	box-shadow: 7px 5px 0px #e26628;
 }
 
-
-.categorias{
+.categorias {
 	height: 100%;
 	display: flex;
 	flex-direction: row;
@@ -66,83 +53,76 @@ a{
 	justify-content: center;
 	justify-content: space-evenly;
 	align-items: center;
-
 }
 
-.categorias-remeras, .categorias-vestidos, .categorias-camperas, .categorias-pantalones {
+.categorias-remeras,
+.categorias-vestidos,
+.categorias-camperas,
+.categorias-pantalones {
 	background-image: url("../img/remeras.png");
 	opacity: 0.9;
 	width: 380px;
 	height: 150px;
 	margin-bottom: 50px;
-	text-align:center;
+	text-align: center;
 	margin-left: 50px;
 	margin-right: 50px;
 
 	box-shadow: 7px 5px 0px #e26628;
 }
 
-
-.pantalones h3, .vestidos h3, .remeras h3,.camperas h3{
-		font-family: 'Fugaz One', cursive;
-		font-size: 30px;
-		color: #feff6f;
-		text-align: center;	
-		text-shadow: 5px 3px 0px #e26628;
+.pantalones h3,
+.vestidos h3,
+.remeras h3,
+.camperas h3 {
+	font-family: "Fugaz One", cursive;
+	font-size: 30px;
+	color: #feff6f;
+	text-align: center;
+	text-shadow: 5px 3px 0px #e26628;
 }
 
-
-.remeras, .vestidos, .camperas, .pantalones{
+.remeras,
+.vestidos,
+.camperas,
+.pantalones {
 	background-color: white;
 	height: 50px;
 	width: 210px;
 	margin: 0px auto;
 	margin-top: 50px;
-	
 }
 
-
-
-
-
-
-.footer{
+.footer {
 	background-color: rgb(255, 255, 255);
-	width: 100%px;
+	width: 100%;
 	height: 400px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-end;
-		justify-content: space-around;
-		border: 5px solid #feff6f;
-
-
-
+	justify-content: space-around;
+	border: 5px solid #feff6f;
 }
 
-.redes{
+.redes {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	
 }
 /* CSS INDEX CHULO */
 
-
-.btn.btn-newsl{
-float: right; 
-box-shadow: 7px 5px 0px#e26628; 
-background-color: #feff6f; 
-color: black; 
-width:140px;
-margin-top: 10px;
+.btn.btn-newsl {
+	float: right;
+	box-shadow: 7px 5px 0px #e26628;
+	background-color: #feff6f;
+	color: black;
+	width: 140px;
+	margin-top: 10px;
 }
 
-
-
-.linksfooter{
+.linksfooter {
 	float: right;
 }
 /* CSS PRODUCTO */
@@ -152,43 +132,38 @@ margin-top: 10px;
 
 	box-shadow: 7px 5px 0px rgb(236, 236, 236);
 	margin: 40px 40px 20px 40px;
-	
 }
 
-.card-title-gral h3{
-		font-family: 'Fugaz One', cursive;
-		font-size: 30px;
-		color: #feff6f;
-		text-align: center;	
-		text-shadow: 5px 3px 0px #e26628;
-		
+.card-title-gral h3 {
+	font-family: "Fugaz One", cursive;
+	font-size: 30px;
+	color: #feff6f;
+	text-align: center;
+	text-shadow: 5px 3px 0px #e26628;
 }
 
-.card-text{
+.card-text {
 	float: right;
-	}
+}
 
-
-
-.card-img-top{
-	width:auto;  height: 520px; 
-	}
+.card-img-top {
+	width: auto;
+	height: 520px;
+}
 
 /* CSS POP UP LOGIN Y REGISTRO */
 
-.modal-content{
-	
+.modal-content {
 	box-shadow: 7px 5px 0px #e26628;
-	
-		}
-		
+}
+
 /* PRODUCTO STOCK */
 
-.eee{
+.eee {
 	margin-top: 20px;
 }
 
-.alta{
+.alta {
 	background-color: #feff6f;
 	height: 50px;
 	width: 60%;
@@ -196,14 +171,12 @@ margin-top: 10px;
 	margin-bottom: 30px;
 	display: flex;
 	justify-content: flex-end;
-    align-content: center;
+	align-content: center;
 	align-items: center;
 	box-shadow: 3px 3px 0px #e26628;
 }
 
-
-
-.modificar{
+.modificar {
 	background-color: #feff6f;
 	height: 50px;
 	width: 60%;
@@ -212,78 +185,60 @@ margin-top: 10px;
 	margin-bottom: 30px;
 	display: flex;
 	justify-content: flex-start;
-    align-content: center;
+	align-content: center;
 	align-items: center;
 	box-shadow: 3px 3px 0px #e26628;
 }
 
-.modificar_titulo{
-	font-family: 'Fugaz One', cursive;
+.modificar_titulo {
+	font-family: "Fugaz One", cursive;
 	font-size: 25px;
 	margin-top: 10px;
 	margin-left: 30px;
 }
 
-.alta_enviar{
+.alta_enviar {
 	width: 70%;
 	margin-left: 15%;
 	display: flex;
 	justify-content: center;
 }
-	
 
-.alta_titulo{
-	font-family: 'Fugaz One', cursive;
+.alta_titulo {
+	font-family: "Fugaz One", cursive;
 	font-size: 25px;
 	margin-top: 10px;
 	margin-right: 20px;
 }
 
-
-.alta_formulario{
+.alta_formulario {
 	width: 70%;
 	margin-left: 15%;
 }
 
-.modificar_formulario{
+.modificar_formulario {
 	width: 70%;
 	margin-left: 15%;
 }
 
-
-@media screen and (max-device-width:768px), screen and (max-width:768px) {
-	
-    .alta{
+@media screen and (max-device-width: 768px), screen and (max-width: 768px) {
+	.alta {
 		height: 30px;
 	}
 
-	.alta_titulo{
+	.alta_titulo {
 		font-size: 15px;
 		margin-right: 10px;
 	}
 
-
-	.logo h2{
-		font-family: 'Fugaz One', cursive;
+	.logo h2 {
+		font-family: "Fugaz One", cursive;
 		margin-left: 20px;
 		font-size: 15px;
 		margin-top: 5px;
 	}
 
-
-	.d-flex{
+	.d-flex {
 		width: 50%;
 	}
-
-
-
-
 }
-
-
-
-
-
-
-
-

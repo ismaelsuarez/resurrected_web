@@ -1,0 +1,247 @@
+@charset "utf-8";
+@import url("./fonts.css");
+
+header {
+    padding: 1.8rem 0.2rem 1rem;
+    border-bottom: 1px solid black;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto 5rem;
+    height: 90vh;
+    /* background-color: red; */
+}
+main .content-entrega {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-page {
+    margin: 3rem 0;
+}
+.nav-page a {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 28px;
+    letter-spacing: -0.015em;
+    color: black;
+    text-decoration: none;
+    padding: 0.313rem 0.8rem;
+    margin: 0 0.313rem;
+}
+.nav-page .underline {
+    border-bottom: 2px solid black;
+}
+.form-entrega {
+    position: relative;
+    top: -5rem;
+}
+.pagos {
+    top: 3rem;
+}
+.form-entrega .datos h3 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 40px;
+    margin-top: 2rem;
+    color: black;
+}
+.form-entrega .datos .metodo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.375rem;
+    width: 53.438rem;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 24px;
+    margin: 1rem 0;
+    padding: 0rem 1.5rem;
+}
+.checkbox {
+    width: 20px;
+    position: relative;
+    margin: 20px auto;
+}
+.checkbox label {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    transition: 0.3s all;
+}
+.checkbox label:after {
+    content: "";
+    width: 9px;
+    height: 5px;
+    position: absolute;
+    top: 4px;
+    left: 2.5px;
+    border: 2px solid #fcfff4;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.checkbox label:hover::after {
+    opacity: 0.3;
+}
+.checkbox input {
+    visibility: hidden;
+}
+.checkbox input:checked + label:after {
+    opacity: 1;
+}
+.checkbox input:checked + label {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-entrega .datos .metodo p {
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+    width: 100%;
+    color: #5c606b;
+}
+.form-entrega .datos textarea {
+    background-color: #c4c4c4;
+    border: none;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    width: 53.438rem;
+    border-radius: 10px;
+    padding: 0.4rem 0.5rem;
+    resize: none;
+}
+.form-entrega .datos .input-entrega {
+    background-color: #c4c4c4;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    height: 3.375rem;
+    width: 53.438rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    padding: 0rem 0.5rem;
+}
+.form-entrega .datos .recibir-ofertas {
+    padding: 1rem 0;
+}
+.form-entrega .datos .recibir-ofertas input[type="checkbox"] {
+    transform: scale(1.5);
+}
+.form-entrega .datos .recibir-ofertas small {
+    padding: 0 0.5rem;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+}
+.form-entrega .datos .nombre {
+    display: flex;
+    flex-direction: row;
+}
+.form-entrega .datos .nombre .input-entrega {
+    width: 26.2rem;
+    margin: 0 0 1rem;
+    color: #5c606b;
+}
+.form-entrega .datos .nombre .input-entrega:first-child {
+    margin-right: 1rem;
+}
+
+/*Carrito*/
+.carrito {
+    position: relative;
+    top: -3rem;
+}
+.carrito .productos-carrito {
+    padding: 1.813rem 0;
+    border-bottom: 1px solid black;
+}
+.carrito .productos-carrito .producto-carrito {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 35rem;
+}
+.carrito .productos-carrito .producto-carrito .imagen-producto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 7.75rem;
+    width: 7.438rem;
+    box-sizing: border-box;
+    border: 1px solid #ec9024;
+}
+.carrito .productos-carrito .producto-carrito .imagen-producto img {
+    height: 100%;
+}
+.carrito .productos-carrito .producto-carrito .detalle-producto {
+    width: 100%;
+    justify-self: flex-start;
+}
+.carrito .productos-carrito .producto-carrito .detalle-producto p {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.015em;
+    padding: 0 0.5rem;
+}
+.detalle-precios {
+    padding: 1.2rem 0 0;
+    border-bottom: 1px solid black;
+}
+.detalle-precios .subtotal,
+.detalle-precios .precio-envio {
+    display: flex;
+    justify-content: space-between;
+}
+.detalle-precios .subtotal p,
+.detalle-precios .precio-envio p {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 34px;
+    padding: 0.4rem 1.125rem;
+    color: black;
+}
+.detalle-precios .precio-envio p {
+    padding-right: 2rem;
+}
+.precio-final {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.precio-final p {
+    letter-spacing: -0.015em;
+    color: #ec9024;
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    padding: 0.4rem 1.125rem;
+}
