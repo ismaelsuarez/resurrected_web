@@ -31,9 +31,18 @@ public class ConfigurationLogin extends WebSecurityConfigurerAdapter {
 	
 		
 
-		http.authorizeRequests().antMatchers("/css/*", "/js/*", "/img/*", "/**").permitAll().and().formLogin()
-				.loginPage("/login").loginProcessingUrl("/logincheck").usernameParameter("email")
-				.passwordParameter("password").defaultSuccessUrl("/admin/inicio").failureUrl("/login?error=error").permitAll().and()
-				.logout().logoutUrl("/logout").logoutSuccessUrl("/login").permitAll().and().csrf().disable();
+		http.authorizeRequests().antMatchers("/css/*", "/js/*", "/img/*", "/**").permitAll()
+				.and().formLogin()
+				.loginPage("/login")
+				.usernameParameter("email")
+				.passwordParameter("password")
+				.defaultSuccessUrl("/index")
+				.loginProcessingUrl("/logincheck")
+				.failureUrl("/login?error=error")
+				.permitAll()
+				.and().logout()
+				.logoutUrl("/logout")
+				.logoutSuccessUrl("/login?logout").permitAll()
+				.and().csrf().disable();
 	}
 }

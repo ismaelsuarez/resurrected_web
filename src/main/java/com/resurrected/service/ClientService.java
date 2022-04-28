@@ -25,6 +25,8 @@ import com.resurrected.entity.Photo;
 import com.resurrected.enums.Rol;
 import com.resurrected.enums.StatusClient;
 import com.resurrected.error.ErrorService;
+import com.resurrected.mapper.ClientMapper;
+import com.resurrected.model.ClientRegisterModel;
 import com.resurrected.repository.ClientRepository;
 
 
@@ -42,27 +44,18 @@ public class ClientService implements UserDetailsService {
 	@Autowired
 	private EmailNotifications emailNotifications;
 	
+	@Autowired
+	private ClientMapper clientmapper;
+	
+
 	
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
-	public Client createClient(String name, String lastname,
-			String email, String password1, String password2, MultipartFile file) throws ErrorService {
-	
-		checkDataBase(name, lastname, email, password1, password2);
-
-		Client client = new Client();
+	public Client createClient(ClientRegisterModel clientModel) throws ErrorService {
 		
-		client.setName(name);
-		client.setLastname(lastname);
-		client.setEmail(email);
-		String encrypted = new BCryptPasswordEncoder().encode(password1);
-		client.setPassword(encrypted);
-		client.setCreateDate(new Date());
-		client.setStatusClient(StatusClient.Base);
-		client.setActive(true);
-		client.setRol(Rol.CLIENT);
+		Client client = clientmapper.modelToEntity(clientModel);
 		
-		emailNotifications.sendEmail("Gracias por registrarte a Resurrected", "Bienvenido", email);
+		emailNotifications.sendEmail("Gracias por registrarte a Resurrected", "Bienvenido", clientModel.getEmail());
 		return clientRepository.save(client);
 
 	}

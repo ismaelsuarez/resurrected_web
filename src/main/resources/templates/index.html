@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns="http://www.thymeleaf.org" lang="en">
 
 <head>
 	<!-- Required meta tags -->
@@ -59,7 +59,8 @@
 							<div class="modal-body">
 
 								<div class="login-left">
-									<form action="#">
+									<form th:action="@{/logincheck}" method="POST">
+										<p th:if="${error != null}" th:text="${error}" style="color: red;"></p>
 										<div class="data">
 											<!-- <label>Email or Phone</label> -->
 											<input type="text" name="email" placeholder="Email" required>
@@ -70,6 +71,7 @@
 										</div>
 										<div class="forgot-pass">
 											<a href="#">Olvidé mi contraseña</a>
+											<button type="sumbit" class="btn btn-signin">Iniciar sesión</button>
 										</div>
 
 										<div class="signup-link">
@@ -107,14 +109,14 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<form action="#">
+					<form action="/registrar" method="POST">
 						<div class="data">
 							<!-- <label>Email or Phone</label> -->
-							<input type="text" name="firstName" placeholder="Nombre" required>
+							<input type="text" name="name" placeholder="Nombre" required>
 						</div>
 						<div class="data">
 							<!-- <label>Email or Phone</label> -->
-							<input type="text" name="lastName" placeholder="Apellido" required>
+							<input type="text" name="lastname" placeholder="Apellido" required>
 						</div>
 						<div class="data">
 							<!-- <label>Email or Phone</label> -->
@@ -124,19 +126,17 @@
 							<!-- <label>Email or Phone</label> -->
 							<input type="password" name="password" placeholder="Contraseña" required>
 						</div>
-						<div class="data">
-							<!-- <label>Email or Phone</label> -->
-							<input type="tel" name="phone" placeholder="Número de teléfono" required>
-						</div>
+
 						<div class="signup-link">
 							¿Ya eres miembro? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciá
 								sesión!</a>
 						</div>
+						<button type="sumbit" class="btn btn-signin">Registrarme</button>
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-registry" data-bs-dismiss="modal">Cerrar</button>
-					<button type="button" class="btn btn-signin">Registrarme</button>
+					<button type="sumbit" class="btn btn-signin">Registrarme</button>
 				</div>
 			</div>
 		</div>
@@ -168,9 +168,11 @@
 							href="#">Regístrate</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-dark" data-bs-toggle="modal" data-bs-target="#loginModal"
-							href="#">Iniciar
-							sesión</a>
+						<a sec:authorize="!isAuthenticated()" class="nav-link text-dark" data-bs-toggle="modal"
+							data-bs-target="#loginModal" href="#">Iniciar sesión</a>
+					</li>
+					<li class="nav-item">
+						<a sec:authorize="isAuthenticated()" class="nav-link text-dark" th:href="@{/logout}">Salir</a>
 					</li>
 					<!-- CARRITO Y LISTA DE DESEOS -->
 					<div class="listadedeseos">
@@ -449,4 +451,5 @@
 	</div>-->
 
 </footer>
+
 </html>
