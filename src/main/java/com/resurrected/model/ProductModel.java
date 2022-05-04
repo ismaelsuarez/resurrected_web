@@ -1,22 +1,21 @@
 package com.resurrected.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
+import com.resurrected.entity.Photo;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.resurrected.enums.RawMaterials;
 import com.resurrected.enums.Status;
 
-import lombok.Data;
+@Getter
+@Builder
+@AllArgsConstructor
+public class ProductModel {
 
-@Data
-public class ProductModel implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -1860435211418386266L;
 	private String id;
 	private String name;
     private String size;
@@ -37,7 +36,7 @@ public class ProductModel implements Serializable {
 	private RawMaterials rawMaterials;
 	private Status status;
 
-	private PhotoModel photo;
+	private Photo photo;
 	private String photoId;
 	
 }

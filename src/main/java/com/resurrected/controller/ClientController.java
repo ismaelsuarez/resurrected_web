@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,14 +21,15 @@ import com.resurrected.service.ClientService;
 @RequestMapping("/")
 public class ClientController {
 
-	@Autowired
-	private ClientService clientService;
+	private final ClientService clientService;
+	private final ClientRepository clientRepository;
+	private final HttpSession session;
 
-	@Autowired
-	private ClientRepository clientRepository;
-
-	@Autowired
-	private HttpSession session;
+	public ClientController(ClientService clientService, ClientRepository clientRepository, HttpSession session) {
+		this.clientService = clientService;
+		this.clientRepository = clientRepository;
+		this.session = session;
+	}
 
 	@GetMapping("/registrate")
 	public String registrate() {

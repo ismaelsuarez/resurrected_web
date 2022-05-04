@@ -1,21 +1,21 @@
 package com.resurrected.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.FetchType;
 import javax.persistence.Lob;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.Data;
+@Getter
+@Builder
+@AllArgsConstructor
+public class PhotoModel{
 
-@Data
-public class PhotoModel implements Serializable{
-	
-	private static final long serialVersionUID = 316984385362915615L;
-	
 	private String id;
 	private String name;
 	private String mime;

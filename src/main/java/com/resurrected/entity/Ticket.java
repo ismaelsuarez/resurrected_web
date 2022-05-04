@@ -12,12 +12,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.Builder;
 import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Data;
 
 @Entity
 @Data
+@Builder
 public class Ticket {
 
 	@Id

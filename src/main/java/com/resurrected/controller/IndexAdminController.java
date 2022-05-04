@@ -3,7 +3,6 @@ package com.resurrected.controller;
 import java.util.EnumSet;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +16,12 @@ import com.resurrected.service.ProductService;
 @RequestMapping("/admin")
 public class IndexAdminController {
 	
-	@Autowired
-	ProductService productService;
+
+	private final ProductService productService;
+
+	public IndexAdminController(ProductService productService) {
+		this.productService = productService;
+	}
 
 	@GetMapping("/inicio")
 	public String inicio(ModelMap model) {

@@ -3,12 +3,15 @@ package com.resurrected.entity;
 
 import java.util.Date;
 import javax.persistence.*;
+
+import lombok.Builder;
 import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Data;
 
 @Entity
 @Data
+@Builder
 public class Photo {
 
 	@Id

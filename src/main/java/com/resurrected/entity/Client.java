@@ -8,6 +8,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.Builder;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.resurrected.enums.Rol;
@@ -17,6 +18,7 @@ import lombok.Data;
 
 @Entity
 @Data
+@Builder
 public class Client {
 
     @Id

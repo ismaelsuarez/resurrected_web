@@ -7,7 +7,6 @@ import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.*;
@@ -33,16 +32,16 @@ import com.resurrected.repository.ClientRepository;
 @Service
 public class ClientService implements UserDetailsService {
 
-	@Autowired
-	private ClientRepository clientRepository;
+	private final ClientRepository clientRepository;
+	private final PhotoService photoService;
+	private final EmailNotifications emailNotifications;
 
-	@Autowired
-	private PhotoService photoService;
-	
-	@Autowired
-	private EmailNotifications emailNotifications;
-	
-	
+	public ClientService(ClientRepository clientRepository, PhotoService photoService, EmailNotifications emailNotifications) {
+		this.clientRepository = clientRepository;
+		this.photoService = photoService;
+		this.emailNotifications = emailNotifications;
+	}
+
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
 	public Client createClient(String name, String lastname,
@@ -50,17 +49,17 @@ public class ClientService implements UserDetailsService {
 	
 		checkDataBase(name, lastname, email, password1, password2);
 
-		Client client = new Client();
-		
-		client.setName(name);
-		client.setLastname(lastname);
-		client.setEmail(email);
 		String encrypted = new BCryptPasswordEncoder().encode(password1);
-		client.setPassword(encrypted);
-		client.setCreateDate(new Date());
-		client.setStatusClient(StatusClient.Base);
-		client.setActive(true);
-		client.setRol(Rol.CLIENT);
+		Client client = Client.builder()
+				.name(name)
+				.lastname(lastname)
+				.email(email)
+				.password(encrypted)
+				.createDate(new Date())
+				.statusClient(StatusClient.Base)
+				.active(Boolean.TRUE)
+				.rol(Rol.CLIENT)
+				.build();
 		
 		emailNotifications.sendEmail("Gracias por registrarte a Resurrected", "Bienvenido", email);
 		return clientRepository.save(client);
