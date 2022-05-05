@@ -63,11 +63,10 @@
 										<p th:if="${error != null}" th:text="${error}" style="color: red;"></p>
 										<div class="data">
 											<!-- <label>Email or Phone</label> -->
-											<input type="text" name="email" placeholder="Email" required>
+											<input type="text" name="email" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address"  required>
 										</div>
 										<div class="data">
-											<!-- <label>Password</label> -->
-											<input type="password" name="password" placeholder="Password" required>
+											<input type="password" name="password" placeholder="Contraseña" pattern=".{6,}" title="Six or more characters" required>
 										</div>
 										<div class="forgot-pass">
 											<a href="#">Olvidé mi contraseña</a>
@@ -101,6 +100,9 @@
 		</div>
 	</div>
 	<!-- Registry Modal -->
+	
+	
+	
 	<div class="modal fade" id="registryModal" tabindex="-1" aria-labelledby="registryModal" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -108,48 +110,50 @@
 					<h5 class="modal-title" id="registryModal">¡Regístrate!</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
+				
 				<div class="modal-body">
 					<form action="/registrar" method="POST">
 						<div class="data">
-							<!-- <label>Email or Phone</label> -->
-							<input type="text" name="name" placeholder="Nombre" required>
+							<input type="text" name="name" placeholder="Nombre" pattern="[A-Za-z]+" title="Invalid name" required>
 						</div>
 						<div class="data">
-							<!-- <label>Email or Phone</label> -->
-							<input type="text" name="lastname" placeholder="Apellido" required>
+							<input type="text" name="lastname" placeholder="Apellido" pattern="[A-Za-z]+" title="Invalid lastname" required>
 						</div>
 						<div class="data">
-							<!-- <label>Email or Phone</label> -->
-							<input type="text" name="email" placeholder="Email" required>
+							<input type="text" name="email" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address"  required>
 						</div>
 						<div class="data">
-							<!-- <label>Email or Phone</label> -->
-							<input type="password" name="password" placeholder="Contraseña" required>
+							<input type="text" name="adress" placeholder="Dirección"  required>
+						</div>
+						<div class="data">
+							<input type="number" name="phone" placeholder="Numero de telefono" pattern=".{6,}" title="Six or more characters"  required>
+						</div>
+						<div class="data">
+							<input type="password" name="password" placeholder="Contraseña" pattern=".{6,}" title="Six or more characters" required>
 						</div>
 
 						<div class="signup-link">
 							¿Ya eres miembro? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciá
 								sesión!</a>
 						</div>
-						<button type="sumbit" class="btn btn-signin">Registrarme</button>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-registry" data-bs-dismiss="modal">Cerrar</button>
+							<button type="sumbit" class="btn btn-signin">Registrarme</button>
+						</div>
 					</form>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-registry" data-bs-dismiss="modal">Cerrar</button>
-					<button type="sumbit" class="btn btn-signin">Registrarme</button>
-				</div>
-			</div>
 		</div>
 	</div>
-
+	
 
 	<div class="encabezado fixed-top">
-
+		
 		<nav class="navbar">
 			<div class="container-fluid">
 
 				<div class="logo">
-					<h2 class="navbar-brand" href="#">RESURRECTED</h2>
+					<h2 class="navbar-brand" >RESURRECTED</h2>
 				</div>
 
 				<form class="d-flex justify-content-center ">
@@ -244,7 +248,9 @@
 				</div>
 			</div>
 		</nav>
+	
 	</div>
+	
 </header>
 
 <!-- FIN DEL SEGUNDO NAVBAR -->

@@ -17,6 +17,8 @@ public class ClientRegisterModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String name;
     private String lastname;
+    private String adress;
+    private String phone;
     private String email;
     private String password;
 	

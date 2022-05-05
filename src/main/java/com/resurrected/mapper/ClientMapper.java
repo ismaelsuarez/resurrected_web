@@ -13,9 +13,9 @@ import com.resurrected.model.ClientRegisterModel;
 @Component
 public class ClientMapper {
 
-	public ClientRegisterModel  convertToModel(String name, String lastname, String email, String password) {
+	public ClientRegisterModel  convertToModel(String name, String lastname,String adress,String phone, String email, String password) {
 		
-		return new ClientRegisterModel(name, lastname, email, password);
+		return new ClientRegisterModel(name, lastname,adress, phone, email, password);
 	}
 	
 	
@@ -25,6 +25,8 @@ public class ClientMapper {
 		
 		client.setName(clientModel.getName());
 		client.setLastname(clientModel.getLastname());
+		client.setAdress(clientModel.getAdress());
+		client.setPhoneNumber(clientModel.getPhone());
 		client.setEmail(clientModel.getEmail());
 		String encrypted = new BCryptPasswordEncoder().encode(clientModel.getPassword());
 		client.setPassword(encrypted);

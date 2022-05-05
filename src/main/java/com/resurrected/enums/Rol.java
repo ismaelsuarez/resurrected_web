@@ -1,5 +1,19 @@
 package com.resurrected.enums;
 
 public enum Rol {
-	CLIENT,ADMIN,SELLER,SUPPLIER
+	
+	ADMIN("Administrador"), 
+    CLIENT("Cliente"),
+	SELLER("Vendedor"),
+	SUPPLIER("Proveedor");
+	
+	private final String displayValue;
+	
+	private Rol(String displayValue) {
+        this.displayValue = displayValue;
+    }
+
+    public String getDisplayValue() {
+        return displayValue;
+    }
 }

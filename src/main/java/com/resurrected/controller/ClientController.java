@@ -2,6 +2,7 @@ package com.resurrected.controller;
 
 import java.util.Optional;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -38,6 +38,7 @@ public class ClientController {
 	@Autowired
 	private ClientMapper clientmapper;
 
+	//no se usa, se podria borrar 
 	@GetMapping("/registrate")
 	public String registrate() {
 		return "registrate.html";
@@ -95,11 +96,11 @@ public class ClientController {
 	}
 
 	@PostMapping("/registrar")
-	public String register(ModelMap model, @RequestParam String name, @RequestParam String lastname, @RequestParam String email, @RequestParam String password) {
+	public String register(ModelMap model, @RequestParam String name, @RequestParam String lastname, @RequestParam String adress, @RequestParam String phone, @RequestParam String email, @RequestParam String password) {
 
 		try {
 			
-			ClientRegisterModel registerModel = clientmapper.convertToModel(name, lastname, email, password);
+			ClientRegisterModel registerModel = clientmapper.convertToModel(name, lastname,adress, phone, email, password);
 			
 			clientService.createClient(registerModel);
 
@@ -111,7 +112,7 @@ public class ClientController {
 			model.put("lastname", lastname);
 			model.put("email", email);
 
-			return "registrate.html";
+			return "index.html";
 
 		}
 

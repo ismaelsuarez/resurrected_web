@@ -263,11 +263,14 @@ margin-top: 10px;
 	}
 
 
-	.logo h2{
+	.logo{
 		font-family: 'Fugaz One', cursive;
 		margin-left: 20px;
 		font-size: 15px;
 		margin-top: 5px;
+		display:flex;
+  		justify-content: center;
+ 		 align-items: center;
 	}
 
 
