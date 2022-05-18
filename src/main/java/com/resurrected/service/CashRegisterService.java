@@ -3,7 +3,6 @@ package com.resurrected.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,10 +16,13 @@ import com.resurrected.repository.TicketRepository;
 @Service
 public class CashRegisterService {
 
-	@Autowired
-	private TicketRepository ticketRepository;
-	@Autowired
-	private CashRegisterRepository cashRegisterRepository;
+	private final TicketRepository ticketRepository;
+	private final CashRegisterRepository cashRegisterRepository;
+
+	public CashRegisterService(TicketRepository ticketRepository, CashRegisterRepository cashRegisterRepository) {
+		this.ticketRepository = ticketRepository;
+		this.cashRegisterRepository = cashRegisterRepository;
+	}
 
 	@Transactional
 	public Ticket paymentticket(String idticket) throws ErrorService {

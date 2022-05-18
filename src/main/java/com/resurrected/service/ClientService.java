@@ -35,27 +35,29 @@ import com.resurrected.repository.ClientRepository;
 @Service
 public class ClientService implements UserDetailsService {
 
-	@Autowired
-	private ClientRepository clientRepository;
+	private final ClientRepository clientRepository;
+	private final PhotoService photoService;
+	private final EmailNotifications emailNotifications;
 
-	@Autowired
-	private PhotoService photoService;
-	
-	@Autowired
-	private EmailNotifications emailNotifications;
-	
+	public ClientService(ClientRepository clientRepository, PhotoService photoService, EmailNotifications emailNotifications) {
+		this.clientRepository = clientRepository;
+		this.photoService = photoService;
+		this.emailNotifications = emailNotifications;
+	}
+
 	@Autowired
 	private ClientMapper clientmapper;
 	
 
-	
+
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
 	public Client createClient(ClientRegisterModel clientModel) throws ErrorService {
 		
-		Client client = clientmapper.modelToEntity(clientModel);
-		
+		Client client = clientmapper.toEntity(clientModel);
+
 		emailNotifications.sendEmail("Gracias por registrarte a Resurrected", "Bienvenido", clientModel.getEmail());
+		
 		return clientRepository.save(client);
 
 	}

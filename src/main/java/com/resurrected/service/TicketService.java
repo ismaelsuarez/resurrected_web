@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,11 +17,13 @@ import com.resurrected.repository.ClientRepository;
 @Service
 public class TicketService {
 
-	@Autowired
-	private ClientRepository personRepository;
+	private final ClientRepository personRepository;
+	private final TicketRepository ticketRepository;
 
-	@Autowired
-	private TicketRepository ticketRepository;
+	public TicketService(ClientRepository personRepository, TicketRepository ticketRepository) {
+		this.personRepository = personRepository;
+		this.ticketRepository = ticketRepository;
+	}
 
 	@Transactional
 	public Ticket loadTicket(String idClient, List<Product> product) throws ErrorService {
@@ -31,11 +32,12 @@ public class TicketService {
 
 		if (check != null) {
 			Client client = check.get();
-			Ticket ticket = new Ticket();
-			ticket.setClient(client);
-			ticket.setProducts(product);
-			ticket.setLoad(new Date());
-			ticket.setStatus(true);
+			Ticket ticket = Ticket.builder()
+					.client(client)
+					.products(product)
+					.load(new Date())
+					.status(Boolean.TRUE)
+					.build();
 			return ticketRepository.save(ticket);
 		} else {
 

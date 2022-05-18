@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,31 +20,34 @@ import com.resurrected.repository.ProductRepository;
 @Service
 public class ProductService {
 
-	@Autowired
-	private ProductRepository productRepository;
+	private final ProductRepository productRepository;
+	private final PhotoService photoService;
 
-	@Autowired
-	private PhotoService photoService;
+	public ProductService(ProductRepository productRepository, PhotoService photoService) {
+		this.productRepository = productRepository;
+		this.photoService = photoService;
+	}
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
 	public Product createProduct(MultipartFile file, String name, Status status, String size, String category,
 			String description, RawMaterials rawMaterials, Double cost, Double price, Integer stock, Double iva)
 			throws ErrorService {
 
-		Product product = new Product();
-		product.setName(name);
-		product.setSize(size);
-		product.setStatus(status);
-		product.setCategory(category);
-		product.setDescription(description);
-		product.setRawMaterials(rawMaterials);
-		product.setCost(cost);
-		product.setPrice(price);
-		product.setStock(stock);
-		product.setIva(iva);
-		product.setCreateDate(new Date());
 		Photo photo = photoService.multiPartToEntity(file);
-		product.setPhoto(photo);
+		Product product = Product.builder()
+				.name(name)
+				.size(size)
+				.status(status)
+				.category(category)
+				.description(description)
+				.rawMaterials(rawMaterials)
+				.cost(cost)
+				.price(price)
+				.iva(iva)
+				.createDate(new Date())
+				.photo(photo)
+				.build();
+
 		return productRepository.save(product);
 
 	}

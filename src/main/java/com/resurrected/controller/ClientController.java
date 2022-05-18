@@ -3,12 +3,12 @@ package com.resurrected.controller;
 import java.util.Optional;
 
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,23 +26,21 @@ import com.resurrected.service.ClientService;
 @RequestMapping("/")
 public class ClientController {
 
-	@Autowired
-	private ClientService clientService;
-
-	@Autowired
-	private ClientRepository clientRepository;
-
-	@Autowired
-	private HttpSession session;
+	private final ClientService clientService;
+	private final ClientRepository clientRepository;
+	private final HttpSession session;
 	
 	@Autowired
 	private ClientMapper clientmapper;
 
-	//no se usa, se podria borrar 
-	@GetMapping("/registrate")
-	public String registrate() {
-		return "registrate.html";
+
+	public ClientController(ClientService clientService, ClientRepository clientRepository, HttpSession session) {
+		this.clientService = clientService;
+		this.clientRepository = clientRepository;
+		this.session = session;
 	}
+
+
 	@GetMapping("/producto")
 	public String producto() {
 		return "product.html";
@@ -118,16 +116,6 @@ public class ClientController {
 
 	}
 	
-	@GetMapping("/login")
-	public String login(Model model, @RequestParam(required = false) String error,@RequestParam(required = false) String email, @RequestParam(required = false) String logout) {
-		if(error != null) {
-			model.addAttribute("error", "El usuario o contraseña son incorrectas");	
-		}
-		if(email != null) {
-			model.addAttribute("nombre", email);
-		}
-		
-		return"index";
-	}
+
 
 }

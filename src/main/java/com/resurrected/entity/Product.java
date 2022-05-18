@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import lombok.Builder;
 import org.hibernate.annotations.GenericGenerator;
 
 
@@ -15,6 +16,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Builder
 public class Product {
 
 	@Id

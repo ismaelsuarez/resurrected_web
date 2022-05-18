@@ -26,9 +26,10 @@ public class PhotoService {
 	public Photo multiPartToEntity(MultipartFile file) throws ErrorService {
 
 		if (file != null) {
-			Photo photo = new Photo();
-			photo.setMime(file.getContentType());
-			photo.setName(file.getName());
+			Photo photo = Photo.builder()
+					.mime(file.getContentType())
+					.name(file.getName())
+					.build();
 			try {
 				photo.setContent(file.getBytes());
 			} catch (IOException ex) {

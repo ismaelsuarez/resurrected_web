@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.OneToOne;
 
+import lombok.Builder;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.resurrected.enums.Example;
@@ -14,6 +15,7 @@ import lombok.Data;
 
 @Entity
 @Data
+@Builder
 public class Supplier {
 
     @Id
