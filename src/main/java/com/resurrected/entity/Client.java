@@ -8,6 +8,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -15,10 +16,13 @@ import com.resurrected.enums.Rol;
 import com.resurrected.enums.StatusClient;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Builder
+@Builder 
+@NoArgsConstructor
+@AllArgsConstructor
 public class Client {
 
     @Id
